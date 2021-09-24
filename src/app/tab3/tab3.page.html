@@ -1,0 +1,68 @@
+<ion-content>
+
+  <div class="padding">
+
+    <div class="logo">
+      <ion-icon name="sunny" color="light"></ion-icon>
+    </div>
+
+    <form [formGroup]="signInForm" #formInfos="ngForm" novalidate>
+
+      <ion-item>
+        <ion-label color="light">Nom</ion-label>
+        <ion-input
+          color="light"
+          placeholder="Nom"
+          type="text"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <div class="ion-margin" *ngIf="formInfos.submitted && f.patient_lastname.errors">
+        <ion-label color="danger" class="error-message-size ion-text-wrap" *ngIf="f.patient_lastname.errors.required">
+          Veuillez indiquer votre nom
+        </ion-label>
+      </div>
+
+      <ion-item>
+        <ion-label color="light">Prénom</ion-label>
+        <ion-input color="light" placeholder="Prénom" type="firstname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="light">Email</ion-label>
+        <ion-input color="light" placeholder="Adresse email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="light">Mot de passe</ion-label>
+        <ion-input color="light" placeholder="Mot de passe" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-button slot="end" color="light" fill="clear">Mot de passe oublié ?</ion-button>
+      </ion-item>
+
+      <ion-button color="light" fill="outline" shape="round" expand="block" routerLink="/profile">Connexion</ion-button>
+      <br>
+      <ion-button shape="round" expand="block" type="submit" submit="!formInfos.valid" routerLink="/profile">Inscription</ion-button>
+
+      <ion-item lines="none">
+        <ion-label color="light" class="ion-text-center">Ou connectez-vous avec</ion-label>
+      </ion-item>
+
+      <div class="flex">
+        <ion-button shape="round" color="#3b5998">
+          <ion-icon slot="start" name="logo-facebook"></ion-icon>
+          Facebook
+        </ion-button>
+        <ion-button  shape="round" color="#db4a39" >
+          <ion-icon slot="start" name="logo-google"></ion-icon>
+          Google
+        </ion-button>
+      </div>
+    </form>
+
+  </div>
+
+</ion-content>

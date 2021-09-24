@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button color="warning" slot="start"></ion-back-button>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="filterData($event)" placeholder="Choisissez votre recette"></ion-searchbar>
+  </ion-toolbar>
+  <div class="ion-padding">
+    <ion-list>
+      <ion-item (click)="selectVal(item.name)" *ngFor="let item of jsonData" routerLink="/top-chef" >{{item.name}}</ion-item>
+    </ion-list>
+  </div>
+</ion-content>

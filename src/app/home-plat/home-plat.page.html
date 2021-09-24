@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button color="warning" slot="start"></ion-back-button>
+    <ion-title>home-plat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <div *ngFor="let reciepe of reciepes">
+      <img class="post_img" src="{{ reciepe.photo }}">
+      <ion-item lines="none">
+        <h2>{{ reciepe.title }}</h2>
+      </ion-item>
+      <ion-item>
+        <p>{{ reciepe.subtitle }}</p>
+      </ion-item>
+      <ion-item style="display: flex">
+        <ion-list lines="none">
+          <ion-item>{{ reciepe.time }}</ion-item>
+          <ion-item>{{ reciepe.preparation }}</ion-item>
+          <ion-item>{{ reciepe.preparation }}</ion-item>
+        </ion-list>
+        <ion-list lines="none">
+          <ion-item>{{ reciepe.time }}</ion-item>
+          <ion-item>{{ reciepe.calories }}</ion-item>
+          <ion-item>{{ reciepe.level }}</ion-item>
+        </ion-list>
+      </ion-item>
+      <ion-item>
+        <p>{{ reciepe.description }}</p>
+      </ion-item>
+    </div>
+  </div>
+
+
+</ion-content>
