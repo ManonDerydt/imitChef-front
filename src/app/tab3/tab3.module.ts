@@ -1,12 +1,19 @@
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
 import { Tab3PageRoutingModule } from './tab3-routing.module';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+    {
+        path: '',
+        component: Tab3Page
+    }
+];
+
 
 @NgModule({
     imports: [
@@ -14,7 +21,7 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
         CommonModule,
         FormsModule,
         ExploreContainerComponentModule,
-        RouterModule.forChild([{path: '', component: Tab3Page}]),
+        RouterModule.forChild(routes),
         Tab3PageRoutingModule,
         ReactiveFormsModule,
     ],

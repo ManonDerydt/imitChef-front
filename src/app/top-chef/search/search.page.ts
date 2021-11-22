@@ -9,9 +9,40 @@ import { Component, OnInit } from '@angular/core';
 export class SearchPage implements OnInit {
   jsonData: any=[];
   searchTerm: string = '';
+  originalData: any;
+  modifiedData: any;
   constructor() {
     this.initializeJSONData();
+    this.originalData = [
+      {
+        name: 'Choux de Bruxelles',
+        code: 'CH',
+        id: 'choux'
+      },
+      {
+        name: 'Lentilles',
+        code: 'LE',
+        id: 'lentilles'
+      },
+      {
+        name: 'Vanille',
+        code: 'VA',
+        id: 'vanille'
+      },
+      {
+        name: 'Homard',
+        code: 'HO',
+        id: 'homard'
+      },
+    ];
+    this.modifiedData = JSON.parse(JSON.stringify(this.originalData))
   }
+
+  resetData(){
+    this.modifiedData = JSON.parse(JSON.stringify((this.originalData)))
+  }
+
+  filterDa
 
   ngOnInit() {
   }
@@ -56,10 +87,4 @@ export class SearchPage implements OnInit {
     }
 
     };
-
-  // ittemTapped(event, item){
-  //   this.navCtrl.pushh(itemDetailsPage, {
-  //     item: item
-  //   })
-  // }
   }

@@ -6,44 +6,90 @@
       <ion-icon name="sunny" color="light"></ion-icon>
     </div>
 
-    <form [formGroup]="signInForm" #formInfos="ngForm" novalidate>
+    <form [ngFormOptions]="formContact" novalidate (ngSubmit)="register()">
 
-      <ion-item>
+<!--------------------------------------  NOM ------------------------------------>
+    <ion-list class="ion-no-padding">
+      <ion-item tappable>
         <ion-label color="light">Nom</ion-label>
         <ion-input
-          color="light"
-          placeholder="Nom"
-          type="text"
-          required
-        ></ion-input>
+                   formControlName="lastname"
+                   color="light"
+                   placeholder="Nom"
+                   type="text"
+                   name="lastname" required
+                   [class.invalid]="!f.lastname.valid && f.lastname.dirty"></ion-input>
       </ion-item>
 
-      <div class="ion-margin" *ngIf="formInfos.submitted && f.patient_lastname.errors">
-        <ion-label color="danger" class="error-message-size ion-text-wrap" *ngIf="f.patient_lastname.errors.required">
-          Veuillez indiquer votre nom
-        </ion-label>
+      <div class="" *ngIf="submitted && f.lastname.errors">
+        <ion-label color="danger" *ngIf="f.lastname.errors.required">Veuillez indiquer votre nom</ion-label>
       </div>
+
+ <!--------------------------------------  NOM ------------------------------------>
+
+ <!--------------------------------------  PRENOM ------------------------------------>
 
       <ion-item>
         <ion-label color="light">Prénom</ion-label>
-        <ion-input color="light" placeholder="Prénom" type="firstname"></ion-input>
+        <ion-input
+                color="light"
+                placeholder="Prénom"
+                type="text"
+                name="firstname"
+                [class.invalid]="!f.firstname.valid && f.firstname.dirty"></ion-input>
       </ion-item>
+
+      <div class="" *ngIf="submitted && f.firstname.errors">
+        <ion-label color="danger" *ngIf="f.firstname.errors.required">Veuillez indiquer votre prénom</ion-label>
+      </div>
+
+ <!--------------------------------------  PRENOM ------------------------------------>
+
+ <!--------------------------------------  EMAIL ------------------------------------>
 
       <ion-item>
         <ion-label color="light">Email</ion-label>
-        <ion-input color="light" placeholder="Adresse email" type="email"></ion-input>
+        <ion-input
+                color="light"
+                placeholder="Adresse email"
+                type="email"
+                name="email"
+                [class.invalid]="!f.email.valid && f.email.dirty"></ion-input>
       </ion-item>
 
+      <div class="" *ngIf="submitted && f.email.errors">
+        <ion-label color="danger" *ngIf="f.email.errors.required">Veuillez indiquez un email</ion-label>
+        <ion-label color="danger" *ngIf="f.email.errors?.pattern">Votre email n'est pas valide</ion-label>
+      </div>
+
+<!--------------------------------------  EMAIL ------------------------------------>
+
+<!--------------------------------------  MOT DE PASSE ------------------------------------>
       <ion-item>
         <ion-label color="light">Mot de passe</ion-label>
-        <ion-input color="light" placeholder="Mot de passe" type="password"></ion-input>
+        <ion-input
+                color="light"
+                placeholder="Mot de passe"
+                type="password"
+                name="password"
+                [class.invalid]="!f.password.valid && f.password.dirty"></ion-input>
       </ion-item>
+
+      <div class="" *ngIf="submitted && f.password.errors">
+        <ion-label color="danger" *ngIf="f.password.errors.required">Veuillez indiquez un mot de passe
+        </ion-label>
+        <ion-label color="danger" *ngIf="f.password.errors.pattern">Le mot de passe doit contenir au minimum 8 caractères, une minuscule, un majuscule et un chiffre.
+        </ion-label>
+      </div>
+
+
+<!--------------------------------------  MOT DE PASSE ------------------------------------>
 
       <ion-item lines="none">
         <ion-button slot="end" color="light" fill="clear">Mot de passe oublié ?</ion-button>
       </ion-item>
 
-      <ion-button color="light" fill="outline" shape="round" expand="block" routerLink="/profile">Connexion</ion-button>
+      <ion-button type="submit" color="light" fill="outline" shape="round" expand="block" routerLink="/profile" (click)="create(formContact)">Connexion</ion-button>
       <br>
       <ion-button shape="round" expand="block" type="submit" submit="!formInfos.valid" routerLink="/profile">Inscription</ion-button>
 
@@ -61,6 +107,7 @@
           Google
         </ion-button>
       </div>
+    </ion-list>
     </form>
 
   </div>
