@@ -62,10 +62,10 @@ const routes: Routes = [
     path: 'choose-emission',
     loadChildren: () => import('./choose-emission/choose-emission.module').then( m => m.ChooseEmissionPageModule)
   },
-  {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  }
+  // {
+  //   path: 'profile',
+  //   loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  // }
 ];
 @NgModule({
   imports: [

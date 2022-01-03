@@ -11,5 +11,4 @@ export class ChooseEmissionPage implements OnInit {
 
   ngOnInit() {
   }
-
 }

@@ -95,6 +95,7 @@ export class TopChefPage implements OnInit {
   plats_top_chef = [
     {
       title: 'Choux de Bruxelles',
+      id:"1",
       photo: '../../assets/top-chef/plats-top-chef/plat-1-top.jpg',
       path: '/home-plat',
       cooker: '../../assets/top-chef/candidats/thomas-top-chef.webp',
@@ -104,6 +105,7 @@ export class TopChefPage implements OnInit {
     },
     {
       title: 'Noix de Saint Jacques',
+      id:"2",
       photo: '../../assets/top-chef/plats-top-chef/plat-3-top.jpg',
       path: '/home-plat',
       cooker: '../../assets/top-chef/candidats/arnaud-top-chef.webp',
@@ -112,6 +114,7 @@ export class TopChefPage implements OnInit {
     },
     {
       title: 'Pommes facies',
+      id:"3",
       photo: '../../assets/top-chef/plats-top-chef/plat-4-top.jpeg',
       path: '/home-plat',
       cooker: '../../assets/top-chef/candidats/chloe-top-chef.webp',
@@ -120,6 +123,7 @@ export class TopChefPage implements OnInit {
     },
     {
       title: 'Homard revisité',
+      id:"4",
       photo: '../../assets/top-chef/plats-top-chef/plat-2-top.jpeg',
       path: '/home-plat',
       cooker: '../../assets/top-chef/candidats/mathias-top-chef.webp',

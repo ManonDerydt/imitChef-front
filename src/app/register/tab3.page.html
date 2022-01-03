@@ -6,7 +6,7 @@
       <ion-icon name="sunny" color="light"></ion-icon>
     </div>
 
-    <form [ngFormOptions]="formContact" novalidate (ngSubmit)="register()">
+    <form [formGroup]="formContact" novalidate (ngSubmit)="register()">
 
 <!--------------------------------------  NOM ------------------------------------>
     <ion-list class="ion-no-padding">
@@ -27,11 +27,12 @@
 
  <!--------------------------------------  NOM ------------------------------------>
 
- <!--------------------------------------  PRENOM ------------------------------------>
+ <!-------------------------------------- PRENOM ------------------------------------>
 
       <ion-item>
         <ion-label color="light">Prénom</ion-label>
         <ion-input
+                formControlName="firstname"
                 color="light"
                 placeholder="Prénom"
                 type="text"
@@ -50,6 +51,7 @@
       <ion-item>
         <ion-label color="light">Email</ion-label>
         <ion-input
+                formControlName="email"
                 color="light"
                 placeholder="Adresse email"
                 type="email"
@@ -68,6 +70,7 @@
       <ion-item>
         <ion-label color="light">Mot de passe</ion-label>
         <ion-input
+                formControlName="password"
                 color="light"
                 placeholder="Mot de passe"
                 type="password"
@@ -76,10 +79,12 @@
       </ion-item>
 
       <div class="" *ngIf="submitted && f.password.errors">
-        <ion-label color="danger" *ngIf="f.password.errors.required">Veuillez indiquez un mot de passe
+        <ion-label color="danger" *ngIf="f.password.errors.required">
+          Veuillez indiquez un mot de passe
         </ion-label>
-        <ion-label color="danger" *ngIf="f.password.errors.pattern">Le mot de passe doit contenir au minimum 8 caractères, une minuscule, un majuscule et un chiffre.
-        </ion-label>
+<!--        <ion-label color="danger" *ngIf="f.password.errors.pattern">-->
+<!--          Le mot de passe doit contenir au minimum 8 caractères, une minuscule, un majuscule et un chiffre.-->
+<!--        </ion-label>-->
       </div>
 
 
@@ -89,9 +94,9 @@
         <ion-button slot="end" color="light" fill="clear">Mot de passe oublié ?</ion-button>
       </ion-item>
 
-      <ion-button type="submit" color="light" fill="outline" shape="round" expand="block" routerLink="/profile" (click)="create(formContact)">Connexion</ion-button>
+      <ion-button type="submit" color="light" fill="outline" shape="round" expand="block" >Connexion</ion-button>
       <br>
-      <ion-button shape="round" expand="block" type="submit" submit="!formInfos.valid" routerLink="/profile">Inscription</ion-button>
+      <ion-button shape="round" expand="block" type="submit" [disabled]="!formContact.valid">Inscription</ion-button>
 
       <ion-item lines="none">
         <ion-label color="light" class="ion-text-center">Ou connectez-vous avec</ion-label>
