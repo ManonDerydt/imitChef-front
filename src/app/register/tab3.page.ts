@@ -50,7 +50,7 @@ export class Tab3Page implements OnInit {
     }else{
       console.log(this.formContact.value)
       let user = this.formContact.value;
-      return this.userService.createUser(user).subscribe(user);
+      return this.userService.createUser(user).subscribe(res => console.log(res));
     }
   }
 
