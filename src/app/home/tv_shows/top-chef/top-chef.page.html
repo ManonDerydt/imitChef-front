@@ -1,0 +1,53 @@
+<ion-header class="background-top-chef toolbar">
+  <ion-toolbar>
+    <ion-back-button color="warning" slot="start"></ion-back-button>
+    <ion-title>top-chef</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Choisissez votre recette" routerLink="/search"></ion-searchbar>
+  </ion-toolbar>
+    <div class="text-stories">
+      <p>Découvrez votre candidat !</p>
+      <p routerLink="/candidates">Voir tout</p>
+    </div>
+
+    <div style="display: flex">
+      <div class="stories" *ngFor="let candidat of candidat_top_chef">
+        <ion-segment-button routerLink="{{ candidat.path }}" class="story">
+          <div class="add_story">
+            <img src="{{ candidat.photo }}" class="img-box">
+          </div>
+        </ion-segment-button>
+      </div>
+    </div>
+
+  <ion-icon name="filter-circle-outline"></ion-icon>
+
+    <div *ngFor="let plat of plats_top_chef">
+      <ion-card>
+        <ion-item lines="none" id="plates">
+          <ion-avatar slot="start">
+            <img src="{{ plat.cooker }}" alt="{{ plat.cooker }}">
+          </ion-avatar>
+          <ion-label>{{ plat.title }}</ion-label>
+          <ion-icon name="ellipsis-horizontal"></ion-icon>
+        </ion-item>
+        <img class="post_img" src="{{ plat.photo }}" routerLink="{{ plat.path }}">
+        <div class="flex-button">
+          <div>
+            <ion-icon name="heart" (click)="addColorFavorite()" [ngStyle]="{'color': buttonColor}" class="button-favorite"></ion-icon>
+            <ion-icon name="chatbox-ellipses"></ion-icon>
+            <ion-icon name="send"></ion-icon>
+          </div>
+          <ion-icon name="bookmark"></ion-icon>
+        </div>
+<!--        <h2>{{ plat.titleDescription }}</h2>-->
+<!--        <p>{{ plat.description}}</p>-->
+      </ion-card>
+    </div>
+  <ion-icon name="filter-circle-outline"></ion-icon>
+
+</ion-content>
