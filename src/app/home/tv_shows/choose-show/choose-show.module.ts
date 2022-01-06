@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TousEnCuisinePageRoutingModule } from './tous-en-cuisine-routing.module';
+import { ChooseEmissionPageRoutingModule } from './choose-show-routing.module';
 
-import { TousEnCuisinePage } from './tous-en-cuisine.page';
+import { ChooseShowPage } from './choose-show.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TousEnCuisinePageRoutingModule
+    ChooseEmissionPageRoutingModule
   ],
-  declarations: [TousEnCuisinePage]
+  declarations: [ChooseShowPage]
 })
-export class TousEnCuisinePageModule {}
+export class ChooseEmissionPageModule {}

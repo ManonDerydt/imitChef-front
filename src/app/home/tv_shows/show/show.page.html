@@ -9,13 +9,14 @@
   <ion-toolbar>
     <ion-searchbar placeholder="Choisissez votre recette" routerLink="/search"></ion-searchbar>
   </ion-toolbar>
-    <div class="text-stories">
+    <div class="text-stories stories">
       <p>Découvrez votre candidat !</p>
       <p routerLink="/candidates">Voir tout</p>
     </div>
 
+  <div class="stories">
     <div style="display: flex">
-      <div class="stories" *ngFor="let candidat of candidat_top_chef">
+      <div class="story" *ngFor="let candidat of candidat_top_chef">
         <ion-segment-button routerLink="{{ candidat.path }}" class="story">
           <div class="add_story">
             <img src="{{ candidat.photo }}" class="img-box">
@@ -23,7 +24,7 @@
         </ion-segment-button>
       </div>
     </div>
-
+  </div>
   <ion-icon name="filter-circle-outline"></ion-icon>
 
     <div *ngFor="let plat of plats_top_chef">

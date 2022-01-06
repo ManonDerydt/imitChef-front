@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ChooseEmissionPage } from './choose-emission.page';
+import { ShowPage } from './show.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ChooseEmissionPage
+    component: ShowPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ChooseEmissionPageRoutingModule {}
+export class TopChefPageRoutingModule {}

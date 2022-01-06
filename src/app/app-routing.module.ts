@@ -12,20 +12,8 @@ const routes: Routes = [
     loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
   },
   {
-    path: 'top-chef',
-    loadChildren: () => import('./home/tv_shows/top-chef/top-chef.module').then(m => m.TopChefPageModule)
-  },
-  {
-    path: 'le-meilleur-patissier',
-    loadChildren: () => import('./home/tv_shows/le-meilleur-patissier/le-meilleur-patissier.module').then(m => m.LeMeilleurPatissierPageModule)
-  },
-  {
-    path: 'objectif-top-chef',
-    loadChildren: () => import('./home/tv_shows/objectif-top-chef/objectif-top-chef.module').then(m => m.ObjectifTopChefPageModule)
-  },
-  {
-    path: 'tous-en-cuisine',
-    loadChildren: () => import('./home/tv_shows/tous-en-cuisine/tous-en-cuisine.module').then(m => m.TousEnCuisinePageModule)
+    path: 'show',
+    loadChildren: () => import('./home/tv_shows/show/show.module').then(m => m.TopChefPageModule)
   },
   {
     path: 'candidates',
@@ -53,11 +41,11 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    loadChildren: () => import('./home/tv_shows/top-chef/search/search.module').then(m => m.SearchPageModule)
+    loadChildren: () => import('./home/tv_shows/show/search/search.module').then(m => m.SearchPageModule)
   },
   {
-    path: 'choose-emission',
-    loadChildren: () => import('./home/tv_shows/choose-emission/choose-emission.module').then(m => m.ChooseEmissionPageModule)
+    path: 'choose-show',
+    loadChildren: () => import('./home/tv_shows/choose-show/choose-show.module').then(m => m.ChooseEmissionPageModule)
   },
   {
     path: 'connexion',
@@ -66,6 +54,10 @@ const routes: Routes = [
   {
     path: 'account',
     loadChildren: () => import('./profil/account/account.module').then( m => m.AccountPageModule)
+  },
+  {
+    path: 'add-post',
+    loadChildren: () => import('./community/add-post/add-post.module').then(m => m.AddPostPageModule)
   }
 ];
 @NgModule({

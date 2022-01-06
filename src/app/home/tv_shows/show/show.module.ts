@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { ChooseEmissionPageRoutingModule } from './choose-emission-routing.module';
-
-import { ChooseEmissionPage } from './choose-emission.page';
+import { TopChefPageRoutingModule } from './show-routing.module';
+import { ShowPage } from './show.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ChooseEmissionPageRoutingModule
+    TopChefPageRoutingModule
   ],
-  declarations: [ChooseEmissionPage]
+  declarations: [ShowPage]
 })
-export class ChooseEmissionPageModule {}
+export class TopChefPageModule {}

@@ -5,7 +5,7 @@ import { MenuPage } from './menu.page';
 import {WelcomePage} from "../welcome_page/welcome.page";
 import {Sign_inPage} from "../profil/register/sign_in/sign_in.page";
 import {AgoraPage} from "../community/agora/agora.page";
-import {ChooseEmissionPageModule} from "../home/tv_shows/choose-emission/choose-emission.module";
+import {ChooseEmissionPageModule} from "../home/tv_shows/choose-show/choose-show.module";
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
     component: MenuPage,
     children: [
       {
-        path: 'account',
+        path: 'profile',
         component: Sign_inPage
       },
       {
@@ -29,15 +29,11 @@ const routes: Routes = [
         path: 'sign_in',
         component: Sign_inPage
       },
-      {
-        path:'choose-emission',
-        component: ChooseEmissionPageModule
-      }
     ]
   },
   {
     path: '',
-    redirectTo: '/account',
+    redirectTo: '/connexion',
     pathMatch: 'full'
   }
 ];

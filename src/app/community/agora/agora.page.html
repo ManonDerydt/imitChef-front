@@ -6,7 +6,7 @@
       </ion-button>
     </ion-buttons>
     <ion-title>
-      <h1 class="title">KIFERS</h1>
+      <h1 class="title">Espace communauté</h1>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button color="dark">
@@ -16,252 +16,41 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content [fullscreen]="true">
   <div class="text-stories">
-    <p>Choisissez votre arrondissement</p>
     <p>Voir tout</p>
+    <ion-icon name="add-circle"></ion-icon>
   </div>
 
-  <div class="stories">
+  <ion-toolbar>
+    <ion-searchbar placeholder="Choisissez votre recette" routerLink="/search"></ion-searchbar>
+  </ion-toolbar>
 
-    <div class="story">
-      <div class="add_story">
-        <img src="../../../assets/profile-img-4.jpg">
-        <ion-icon color="primary" name="add-circle"></ion-icon>
-      </div>
-      <p style="color: #86888f">Manon Derydt</p>
-    </div>
 
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-4.jpg">
-      </div>
-      <div>
-        <p></p>
-      </div>
-    </div>
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-5.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-4.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-5.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-4.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-5.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-4.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-5.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-4.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-5.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-    <div class="story">
-      <div class="img-box">
-        <img src="../../../assets/profile-img-4.jpg">
-      </div>
-      <div>
-        <p>Ivan Boole</p>
-      </div>
-    </div>
-
-  </div>
-  <hr>
-
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img src="../../../assets/profile-img-5.jpg">
-    </ion-avatar>
-    <ion-label>Booling</ion-label>
-    <ion-icon name="ellipsis-horizontal"></ion-icon>
-  </ion-item>
-
-  <img class="post_img" src="../../../assets/post-1.jpg">
-
-  <div class="flex-button">
-    <div>
-      <ion-icon name="ios-heart-outline"></ion-icon>
-      <ion-icon name="chatbox-ellipses"></ion-icon>
-      <ion-icon name="send"></ion-icon>
-    </div>
-    <ion-icon name="bookmark"></ion-icon>
+  <div class="grid">
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-1-top.jpg');"></div>
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-2-top.jpeg');"></div>
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-4-top.jpeg');"></div>
   </div>
 
-  <p class="insta-text"><b>2.875 Likes</b></p>
-  <p class="insta-text">
-    <b>Le lorem ipsum</b> est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant
-    remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.
-  </p>
-  <br>
-
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img src="../../../assets/profile-img-4.jpg">
-    </ion-avatar>
-    <ion-label>Concert</ion-label>
-    <ion-icon name="ellipsis-horizontal"></ion-icon>
-  </ion-item>
-
-  <img class="post_img" src="../../../assets/post-2.jpg">
-
-  <div class="flex-button">
-    <div>
-      <ion-icon name="heart" (click)="addEvent()" [ngStyle]="{'background-color': buttonColor}"></ion-icon>
-      <ion-icon name="chatbox-ellipses"></ion-icon>
-      <ion-icon name="send"></ion-icon>
-    </div>
-    <ion-icon name="bookmark"></ion-icon>
+  <div class="grid">
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-4-top.jpeg');"></div>
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-1-top.jpg');"></div>
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-3-top.jpg');"></div>
   </div>
 
-  <p class="insta-text"><b>2.875 Likes</b></p>
-  <p class="insta-text">
-    <b>Le lorem ipsum</b> est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant
-    remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.
-  </p>
-  <br>
-
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img src="../../../assets/profile-img-5.jpg">
-    </ion-avatar>
-    <ion-label>Réalité virtuelle</ion-label>
-    <ion-icon name="ellipsis-horizontal"></ion-icon>
-  </ion-item>
-
-  <img class="post_img" src="../../../assets/post-6.jpg">
-
-  <div class="flex-button">
-    <div>
-      <ion-icon name="ios-heart-outline"></ion-icon>
-      <ion-icon name="chatbox-ellipses"></ion-icon>
-      <ion-icon name="send"></ion-icon>
-    </div>
-    <ion-icon name="bookmark"></ion-icon>
+  <div class="grid">
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-2-top.jpeg');"></div>
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-4-top.jpeg');"></div>
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-1-top.jpg');"></div>
   </div>
 
-  <p class="insta-text"><b>2.875 Likes</b></p>
-  <p class="insta-text">
-    <b>Le lorem ipsum</b> est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant
-    remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.
-  </p>
-  <br>
-
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img src="../../../assets/profile-img-4.jpg">
-    </ion-avatar>
-    <ion-label>Restaurant</ion-label>
-    <ion-icon name="ellipsis-horizontal"></ion-icon>
-  </ion-item>
-
-  <img class="post_img" src="../../../assets/post-4.jpg">
-
-  <div class="flex-button">
-    <div>
-      <ion-icon name="heart"></ion-icon>
-      <ion-icon name="chatbox-ellipses"></ion-icon>
-      <ion-icon name="send"></ion-icon>
-    </div>
-    <ion-icon name="bookmark"></ion-icon>
+  <div class="grid">
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-4-top.jpeg');"></div>
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-2-top.jpeg');"></div>
+    <div class="img_box" style="background-image: url('assets/top-chef/plats-top-chef/plat-3-top.jpg');"></div>
   </div>
-
-  <p class="insta-text"><b>2.875 Likes</b></p>
-  <p class="insta-text">
-    <b>Le lorem ipsum</b> est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant
-    remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.
-  </p>
-  <br>
-
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img src="../../../assets/profile-img-5.jpg">
-    </ion-avatar>
-    <ion-label>Cinéma</ion-label>
-    <ion-icon name="ellipsis-horizontal"></ion-icon>
-  </ion-item>
-
-  <img class="post_img" src="../../../assets/post-5.jpg">
-
-  <div class="flex-button">
-    <div>
-      <ion-icon name="heart"></ion-icon>
-      <ion-icon name="chatbox-ellipses"></ion-icon>
-      <ion-icon name="send"></ion-icon>
-    </div>
-    <ion-icon name="bookmark"></ion-icon>
-  </div>
-
-  <p class="insta-text"><b>2.875 Likes</b></p>
-  <p class="insta-text">
-    <b>Le lorem ipsum</b> est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant
-    remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.
-  </p>
-  <br>
-
 
 </ion-content>

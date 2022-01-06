@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
 // buttonColor: string;
 
 @Component({
-  selector: 'app-top-chef',
-  templateUrl: './top-chef.page.html',
-  styleUrls: ['./top-chef.page.scss'],
+  selector: 'app-show',
+  templateUrl: './show.page.html',
+  styleUrls: ['./show.page.scss'],
 })
-export class TopChefPage implements OnInit {
+export class ShowPage implements OnInit {
   jsonData: any=[];
   public buttonClicked: boolean = false;
   private buttonColor: string;

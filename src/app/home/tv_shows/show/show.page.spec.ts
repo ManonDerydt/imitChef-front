@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TopChefPage } from './top-chef.page';
+import { ShowPage } from './show.page';
 
 describe('TopChefPage', () => {
-  let component: TopChefPage;
-  let fixture: ComponentFixture<TopChefPage>;
+  let component: ShowPage;
+  let fixture: ComponentFixture<ShowPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopChefPage ],
+      declarations: [ ShowPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TopChefPage);
+    fixture = TestBed.createComponent(ShowPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
