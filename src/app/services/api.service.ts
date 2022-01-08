@@ -24,6 +24,10 @@ export class ApiService {
     post(url: string, body: any) {
         url = ApiService.updateUrl(url);
         return this.http.post(url, body);
+    }
 
+    get(url: string) {
+        url = ApiService.updateUrl(url);
+        return this.http.get(url);
     }
 }

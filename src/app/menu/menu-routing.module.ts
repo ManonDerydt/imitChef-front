@@ -33,7 +33,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/connexion',
+    redirectTo: '/choose-show',
     pathMatch: 'full'
   }
 ];

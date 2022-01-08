@@ -3,6 +3,7 @@ import {Validators, FormGroup, FormBuilder, FormControl} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../../services/user.service";
+import {log} from "util";
 
 
 @Component({
@@ -48,10 +49,9 @@ export class Sign_inPage implements OnInit {
       alert("Le formulaire n'est pas correct");
       return;
     }else{
-      console.log(this.formContact.value)
       let user = this.formContact.value;
 
-      return this.userService.createUser(user).subscribe();
+      return this.userService.createUser(user).subscribe(res=>console.log(res));
     }
 
   }
