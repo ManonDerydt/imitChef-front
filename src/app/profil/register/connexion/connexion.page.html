@@ -1,0 +1,80 @@
+<ion-content>
+
+  <div class="padding">
+
+    <div class="logo">
+      <ion-icon name="sunny" color="light"></ion-icon>
+    </div>
+
+    <form [formGroup]="formContact" novalidate (ngSubmit)="register()">
+      <ion-list>
+        <!--------------------------------------  EMAIL ------------------------------------>
+        <ion-item>
+          <ion-label color="light">Email</ion-label>
+          <ion-input
+              formControlName="email"
+              color="light"
+              placeholder="Adresse email"
+              type="email"
+              name="email"
+              [class.invalid]="!f.email.valid && f.email.dirty"></ion-input>
+        </ion-item>
+
+        <div class="" *ngIf="submitted && f.email.errors">
+          <ion-label color="danger" *ngIf="f.email.errors.required">Veuillez indiquez un email</ion-label>
+          <ion-label color="danger" *ngIf="f.email.errors?.pattern">Votre email n'est pas valide</ion-label>
+        </div>
+
+        <!--------------------------------------  EMAIL ------------------------------------>
+
+        <!--------------------------------------  MOT DE PASSE ------------------------------------>
+        <ion-item>
+          <ion-label color="light">Mot de passe</ion-label>
+          <ion-input
+                  formControlName="password"
+                  color="light"
+                  placeholder="Mot de passe"
+                  type="password"
+                  name="password"
+                  [class.invalid]="!f.password.valid && f.password.dirty"></ion-input>
+        </ion-item>
+
+        <div class="" *ngIf="submitted && f.password.errors">
+          <ion-label color="danger" *ngIf="f.password.errors.required">
+            Veuillez indiquez un mot de passe
+          </ion-label>
+          <!--        <ion-label color="danger" *ngIf="f.password.errors.pattern">-->
+          <!--          Le mot de passe doit contenir au minimum 8 caractères, une minuscule, un majuscule et un chiffre.-->
+          <!--        </ion-label>-->
+        </div>
+
+
+        <!--------------------------------------  MOT DE PASSE ------------------------------------>
+
+        <ion-item lines="none">
+          <ion-button slot="end" color="light" fill="clear">Mot de passe oublié ?</ion-button>
+        </ion-item>
+
+        <ion-button shape="round" expand="block" type="submit" [disabled]="!formContact.valid">Connexion</ion-button>
+
+        <ion-item lines="none">
+          <ion-label color="light" class="ion-text-center">Ou connectez-vous avec</ion-label>
+        </ion-item>
+
+        <div class="flex">
+          <ion-button shape="round" color="#3b5998">
+            <ion-icon slot="start" name="logo-facebook"></ion-icon>
+            Facebook
+          </ion-button>
+          <ion-button  shape="round" color="#db4a39" >
+            <ion-icon slot="start" name="logo-google"></ion-icon>
+            Google
+          </ion-button>
+        </div>
+      </ion-list>
+    </form>
+
+  </div>
+
+</ion-content>
+
