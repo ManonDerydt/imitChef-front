@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { TopChefPageRoutingModule } from './show-routing.module';
+import { ShowPageRoutingModule } from './show-routing.module';
+
 import { ShowPage } from './show.page';
 
 @NgModule({
@@ -10,8 +11,8 @@ import { ShowPage } from './show.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    TopChefPageRoutingModule
+    ShowPageRoutingModule
   ],
   declarations: [ShowPage]
 })
-export class TopChefPageModule {}
+export class ShowPageModule {}

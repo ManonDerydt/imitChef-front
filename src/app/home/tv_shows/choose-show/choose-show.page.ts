@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ChooseShowService} from "../../../services/chooseShow.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-choose-show',
@@ -12,9 +13,8 @@ export class ChooseShowPage implements OnInit {
 
   constructor(
       public chooseShowService : ChooseShowService,
+      private router: Router
   ) {}
-
-  missions: Array<{}> = [];
 
   ngOnInit() {
     this.getAllShow();
@@ -22,14 +22,18 @@ export class ChooseShowPage implements OnInit {
 
   getAllShow() {
     this.chooseShowService.getAllShow()
-      .subscribe((shows: Array<{}>) => {
+        .subscribe((shows: Array<{}>) => {
         this.shows = shows;
         this.shows.forEach((show: any = {}) => {
-          console.log(show)
+          // console.log(show)
         })
     },
     error => {
       console.log('error', error)
     })
+  }
+
+  openShowById($show: any = {}) {
+    this.router.navigate(['/show', $show.id]);
   }
 }

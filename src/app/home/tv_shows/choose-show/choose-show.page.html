@@ -9,7 +9,7 @@
 
     <h2>Choisissez votre émission</h2>
 
-<div *ngFor="let show of shows">
+<div *ngFor="let show of shows" (click)="openShowById(show)">
     <div class="flex">
         <ion-card class="button-tv-show" routerLink="/show">
             <img src="{{ show.image }}" alt="{{ show.name }}">

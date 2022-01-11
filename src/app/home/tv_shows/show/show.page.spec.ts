@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ShowPage } from './show.page';
 
-describe('TopChefPage', () => {
+describe('ShowPage', () => {
   let component: ShowPage;
   let fixture: ComponentFixture<ShowPage>;
 

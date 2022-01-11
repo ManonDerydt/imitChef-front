@@ -1,54 +1,70 @@
-<ion-header class="background-top-chef toolbar">
+<ion-header>
   <ion-toolbar>
     <ion-back-button color="warning" slot="start"></ion-back-button>
-    <ion-title>top-chef</ion-title>
+    <ion-title>Show </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-toolbar>
-    <ion-searchbar placeholder="Choisissez votre recette" routerLink="/search"></ion-searchbar>
-  </ion-toolbar>
-    <div class="text-stories stories">
-      <p>Découvrez votre candidat !</p>
-      <p routerLink="/candidates">Voir tout</p>
-    </div>
-
-  <div class="stories">
-    <div style="display: flex">
-      <div class="story" *ngFor="let candidat of candidat_top_chef">
-        <ion-segment-button routerLink="{{ candidat.path }}" class="story">
-          <div class="add_story">
-            <img src="{{ candidat.photo }}" class="img-box">
-          </div>
-        </ion-segment-button>
-      </div>
-    </div>
+<div>
+  <div *ngFor="let show of shows" (click)="openShowById(show)">
+    <h4>L'émission : {{ show.name }}</h4>
   </div>
-  <ion-icon name="filter-circle-outline"></ion-icon>
+</div>
 
-    <div *ngFor="let plat of plats_top_chef">
-      <ion-card>
-        <ion-item lines="none" id="plates">
-          <ion-avatar slot="start">
-            <img src="{{ plat.cooker }}" alt="{{ plat.cooker }}">
-          </ion-avatar>
-          <ion-label>{{ plat.title }}</ion-label>
-          <ion-icon name="ellipsis-horizontal"></ion-icon>
-        </ion-item>
-        <img class="post_img" src="{{ plat.photo }}" routerLink="{{ plat.path }}">
-        <div class="flex-button">
-          <div>
-            <ion-icon name="heart" (click)="addColorFavorite()" [ngStyle]="{'color': buttonColor}" class="button-favorite"></ion-icon>
-            <ion-icon name="chatbox-ellipses"></ion-icon>
-            <ion-icon name="send"></ion-icon>
-          </div>
-          <ion-icon name="bookmark"></ion-icon>
-        </div>
-<!--        <h2>{{ plat.titleDescription }}</h2>-->
-<!--        <p>{{ plat.description}}</p>-->
-      </ion-card>
-    </div>
-  <ion-icon name="filter-circle-outline"></ion-icon>
 
-</ion-content>
+<div>
+
+<!--  <ion-header class="background-top-chef toolbar">-->
+<!--    <ion-toolbar>-->
+<!--      <ion-back-button color="warning" slot="start"></ion-back-button>-->
+<!--      <ion-title>{{ show.name }}</ion-title>-->
+<!--    </ion-toolbar>-->
+<!--  </ion-header>-->
+
+<!--  <ion-content>-->
+<!--    <ion-toolbar>-->
+<!--      <ion-searchbar placeholder="Choisissez votre recette" routerLink="/search"></ion-searchbar>-->
+<!--    </ion-toolbar>-->
+<!--    <div class="text-stories stories">-->
+<!--      <p>Découvrez votre candidat !</p>-->
+<!--      <p routerLink="/candidates">Voir tout</p>-->
+<!--    </div>-->
+
+<!--    <div class="stories">-->
+<!--      &lt;!&ndash;    <div style="display: flex">&ndash;&gt;-->
+<!--      &lt;!&ndash;      <div class="story" *ngFor="let candidat of candidat_top_chef">&ndash;&gt;-->
+<!--      &lt;!&ndash;        <ion-segment-button routerLink="{{ candidat.path }}" class="story">&ndash;&gt;-->
+<!--      &lt;!&ndash;          <div class="add_story">&ndash;&gt;-->
+<!--      &lt;!&ndash;            <img src="{{ candidat.photo }}" class="img-box">&ndash;&gt;-->
+<!--      &lt;!&ndash;          </div>&ndash;&gt;-->
+<!--      &lt;!&ndash;        </ion-segment-button>&ndash;&gt;-->
+<!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+<!--      &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--    <ion-icon name="filter-circle-outline"></ion-icon>-->
+<!--    &lt;!&ndash;    <div *ngFor="let plat of plats_top_chef">&ndash;&gt;-->
+<!--)&#45;&#45;    &lt;!&ndash;      <ion-card>&ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;        <ion-item lines="none" id="plates">&ndash;&gt;-->
+<!--    &lt;!&ndash;          <ion-avatar slot="start">&ndash;&gt;-->
+<!--    &lt;!&ndash;            <img src="{{ plat.cooker }}" alt="{{ plat.cooker }}">&ndash;&gt;-->
+<!--    &lt;!&ndash;          </ion-avatar>&ndash;&gt;-->
+<!--    &lt;!&ndash;          <ion-label>{{ plat.title }}</ion-label>&ndash;&gt;-->
+<!--    &lt;!&ndash;          <ion-icon name="ellipsis-horizontal"></ion-icon>&ndash;&gt;-->
+<!--    &lt;!&ndash;        </ion-item>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <img class="post_img" src="{{ plat.photo }}" routerLink="{{ plat.path }}">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <div class="flex-button">&ndash;&gt;-->
+<!--    &lt;!&ndash;          <div>&ndash;&gt;-->
+<!--    &lt;!&ndash;            <ion-icon name="heart" (click)="addColorFavorite()" [ngStyle]="{'color': buttonColor}" class="button-favorite"></ion-icon>&ndash;&gt;-->
+<!--    &lt;!&ndash;            <ion-icon name="chatbox-ellipses"></ion-icon>&ndash;&gt;-->
+<!--    &lt;!&ndash;            <ion-icon name="send"></ion-icon>&ndash;&gt;-->
+<!--    &lt;!&ndash;          </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;          <ion-icon name="bookmark"></ion-icon>&ndash;&gt;-->
+<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;&lt;!&ndash;        <h2>{{ plat.titleDescription }}</h2>&ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;&lt;!&ndash;        <p>{{ plat.description}}</p>&ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;      </ion-card>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    <ion-icon name="filter-circle-outline"></ion-icon>-->
+
+<!--  </ion-content>-->
+</div>

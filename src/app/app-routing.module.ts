@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 // @ts-ignore
+// @ts-ignore
 const routes: Routes = [
   {
     path: '',
@@ -13,8 +14,12 @@ const routes: Routes = [
   },
   {
     path: 'show',
-    loadChildren: () => import('./home/tv_shows/show/show.module').then(m => m.TopChefPageModule)
+    loadChildren: () => import('./home/tv_shows/show/show.module').then(m => m.ShowPageModule)
   },
+  // {
+  //   path: 'showCard',
+  //   loadChildren: () => import('./home/tv_shows/show/show-card.module').then(m => m.ShowCardPageModule)
+  // },
   {
     path: 'candidates',
     loadChildren: () => import('./home/candidates/candidates_list/candidates.module').then(m => m.ListeCandidatsPageModule)

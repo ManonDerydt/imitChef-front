@@ -10,7 +10,7 @@ export class ShowService {
 
     constructor(private api: ApiService) {}
 
-    // getAllShow() {
-    //     return this.api.get('/show');
-    // }
+    getAllShow(showId: any) {
+        return this.api.get('/show' + showId);
+    }
 }
