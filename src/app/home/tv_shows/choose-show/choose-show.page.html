@@ -11,7 +11,7 @@
 
 <div *ngFor="let show of shows" (click)="openShowById(show)">
     <div class="flex">
-        <ion-card class="button-tv-show" routerLink="/show">
+        <ion-card class="button-tv-show">
             <img src="{{ show.image }}" alt="{{ show.name }}">
             <p>{{ show.name }}</p>
         </ion-card>

@@ -5,7 +5,6 @@ import { MenuPage } from './menu.page';
 import {WelcomePage} from "../welcome_page/welcome.page";
 import {Sign_inPage} from "../profil/register/sign_in/sign_in.page";
 import {AgoraPage} from "../community/agora/agora.page";
-import {ChooseEmissionPageModule} from "../home/tv_shows/choose-show/choose-show.module";
 
 
 const routes: Routes = [
@@ -29,13 +28,11 @@ const routes: Routes = [
         path: 'sign_in',
         component: Sign_inPage
       },
+      {
+        path: 'shows',
+        loadChildren: () => import('../home/tv_shows/tv_shows.module').then(m => m.Tv_showsModule)
+      },
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/choose-show' +
-        '',
-    pathMatch: 'full'
   }
 ];
 
