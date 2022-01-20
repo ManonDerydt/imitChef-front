@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 // @ts-ignore
-// @ts-ignore
 const routes: Routes = [
   {
     path: '',
@@ -11,10 +10,6 @@ const routes: Routes = [
   {
     path: 'splash',
     loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
-  },
-  {
-    path: 'show',
-    loadChildren: () => import('./home/tv_shows/show/show.module').then(m => m.ShowPageModule)
   },
   // {
   //   path: 'showCard',
@@ -47,10 +42,6 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./home/tv_shows/show/search/search.module').then(m => m.SearchPageModule)
-  },
-  {
-    path: 'choose-show',
-    loadChildren: () => import('./home/tv_shows/choose-show/choose-show.module').then(m => m.ChooseEmissionPageModule)
   },
   {
     path: 'connexion',

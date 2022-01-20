@@ -22,18 +22,16 @@ export class ChooseShowPage implements OnInit {
 
   getAllShow() {
     this.chooseShowService.getAllShow()
-        .subscribe((shows: Array<{}>) => {
-        this.shows = shows;
-        this.shows.forEach((show: any = {}) => {
-          // console.log(show)
-        })
-    },
-    error => {
-      console.log('error', error)
-    })
+        .subscribe(
+            (shows: Array<{}>) => {
+              this.shows = shows;
+              },
+                error => {
+              console.log('error', error)
+            })
   }
 
   openShowById($show: any = {}) {
-    this.router.navigate(['/show', $show.id]);
+    this.router.navigate(['home/shows', $show.id]);
   }
 }

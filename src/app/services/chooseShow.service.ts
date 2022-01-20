@@ -13,4 +13,8 @@ export class ChooseShowService {
     getAllShow() {
         return this.api.get('/show');
     }
+
+    getShow(id: string) {
+        return this.api.get(`/show/${id}`);
+    }
 }
