@@ -7,8 +7,6 @@ import {Tv_showsRoutingModule} from "./tv_shows.routing.module";
 import {ChooseShowPage} from "./choose-show/choose-show.page";
 import {ShowPage} from "./show/show.page";
 
-
-
 @NgModule({
     imports: [
         CommonModule,

@@ -6,16 +6,17 @@ import {ApiService} from './api.service';
     providedIn: 'root'
 })
 
-export class ChooseShowService {
+export class ReciepeService {
 
     constructor(private api: ApiService) {}
 
-    getAllShow() {
-        return this.api.get('/show');
+    getReciepeById(id: string) {
+        return this.api.get(`/reciepe/${id}`);
     }
 
-    getShow(id: string) {
-        return this.api.get(`/show/${id}`);
+    getReciepes() {
+        return this.api.get(`/reciepe`);
     }
-    
+
+
 }

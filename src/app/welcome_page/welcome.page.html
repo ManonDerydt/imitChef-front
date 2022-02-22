@@ -14,8 +14,8 @@
 </div>
 <img src="/assets/chef-1.jpg" alt="toque">
 
-  <ion-button shape="round" expand="block" href="/choose-show" class="button-home" color="warning">Choisissez votre émission</ion-button>
-
-  <ion-card shape="round" expand="block" routerlink="/choose-show" class="button-home" color="danger">Choisissez votre émission</ion-card>
+  <a>
+    <ion-button shape="round" expand="block" [routerLink]="['/home/shows']" class="button-home" color="warning">Choisissez votre émission</ion-button>
+  </a>
 
 </ion-content>

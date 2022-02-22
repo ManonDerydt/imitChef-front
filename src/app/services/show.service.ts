@@ -13,4 +13,13 @@ export class ShowService {
     getAllShow(showId: any) {
         return this.api.get('/show' + showId);
     }
+
+    getAllCandidates() {
+        return this.api.get('/candidate');
+    }
+
+    getCandidateByShow() {
+        return this.api.get('/candidatesByShow');
+    }
+
 }

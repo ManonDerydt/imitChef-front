@@ -19,8 +19,8 @@ ion-header img{
 }
 
 .stories{
-  display: flex;
-  overflow: scroll;
+  display: flex !important;
+  overflow: scroll !important;
 }
 
 .stories .img-box{

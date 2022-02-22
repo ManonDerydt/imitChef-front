@@ -4,17 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePlatPageRoutingModule } from './reciepe-routing.module';
+import { ReciepePageRoutingModule } from './reciepe.routing.module';
 
 import { ReciepePage } from './reciepe.page';
+import {Tv_showsRoutingModule} from "../tv_shows/tv_shows.routing.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePlatPageRoutingModule
+    ReciepePageRoutingModule,
+    Tv_showsRoutingModule,
   ],
   declarations: [ReciepePage]
 })
-export class HomePlatPageModule {}
+export class ReciepePageModule {}
