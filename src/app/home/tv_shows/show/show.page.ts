@@ -5,6 +5,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
 import {ChooseShowService} from "../../../services/chooseShow.service";
 import {ReciepeService} from "../../../services/reciepe.service";
+import type { Candidate } from "../../../../types/Candidate";
 
 @Component({
   selector: 'app-show',
@@ -13,8 +14,8 @@ import {ReciepeService} from "../../../services/reciepe.service";
 })
 export class ShowPage implements OnInit {
   show = {name: null};
-  candidatesOftheShow = {tv_show: null};
-  candidates: Array<{}> = [];
+  candidateOftheShow:Candidate = null;
+  candidates: Array<Candidate> = [];
   reciepes: Array<{}> = [];
 
 
@@ -28,15 +29,13 @@ export class ShowPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(parameter => {
+    this.route.params.subscribe(async parameter => {
+        const showId = parameter.id
         this.getShow(parameter.id)
+        this.getAllCandidates();
+        this.getReciepes();
+        this.getCandidatesByShow(showId);
     })
-      this.getAllCandidates();
-      this.getReciepes();
-      this.getCandidateByShow();
-
-      console.log(this.candidatesOftheShow)
-      console.log(this.show)
   }
 
     getShow(id: string) {
@@ -49,12 +48,11 @@ export class ShowPage implements OnInit {
             })
     }
 
-    getCandidateByShow(){
-        this.showService.getCandidateByShow()
+    getCandidatesByShow(showId:string):void{
+        this.showService.getCandidateByShow(showId)
             .subscribe(
-                (candidatesOftheShow: any) => {
-                    this.candidatesOftheShow = candidatesOftheShow;
-                    console.log(candidatesOftheShow)
+                (candidateOftheShow: Candidate) => {
+                    this.candidateOftheShow = candidateOftheShow;
                 },
                 error => {
                     console.log('error', error)
@@ -64,7 +62,7 @@ export class ShowPage implements OnInit {
     getAllCandidates() {
         this.showService.getAllCandidates()
         .subscribe(
-            (candidates: Array<{}>) => {
+            (candidates: Array<Candidate>) => {
                 this.candidates = candidates;
             },
             error => {
@@ -99,7 +97,6 @@ export class ShowPage implements OnInit {
 
     openReciepeById($reciepe: any = {}) {
         this.router.navigate(['home/reciepe/', $reciepe.id]);
-
     }
 
 }

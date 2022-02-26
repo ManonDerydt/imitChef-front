@@ -7,8 +7,8 @@
 
 <ion-content>
 
-  <h1>{{ show.name }}</h1>
-  <h2>{{ candidatesOftheShow.tv_show }}</h2>
+  <h1 *ngIf="show">{{ show.name }}</h1>
+  <h2 *ngIf="candidateOftheShow">{{ candidateOftheShow.tv_show }}</h2>
   <ion-buttons slot="start">
     <ion-button color="dark">
       <ion-icon slot="icon-only" name="camera"></ion-icon>

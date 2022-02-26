@@ -5,12 +5,8 @@ import {ShowPage} from "../tv_shows/show/show.page";
 
 const routes: Routes = [
   {
-    path: '',
-    component: ReciepePage
-  },
-  {
     path: ':id',
-    component: ShowPage
+    component: ReciepePage
   }
 ];
 

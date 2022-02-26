@@ -15,11 +15,12 @@ export class ShowService {
     }
 
     getAllCandidates() {
-        return this.api.get('/candidate');
+        return this.api.get('/candidates');
     }
 
-    getCandidateByShow() {
-        return this.api.get('/candidatesByShow');
+    getCandidateByShow(showId) {
+        return this.api.get(`/candidateByShow/${showId}`);
     }
+
 
 }
