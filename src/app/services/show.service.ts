@@ -22,5 +22,8 @@ export class ShowService {
         return this.api.get(`/candidateByShow/${showId}`);
     }
 
+    // openCandidateByShow() {
+    //     return this.api.get('/getCandidateByShowId');
+    // }
 
 }

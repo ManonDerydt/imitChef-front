@@ -6,6 +6,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import {ChooseShowService} from "../../../services/chooseShow.service";
 import {ReciepeService} from "../../../services/reciepe.service";
 import type { Candidate } from "../../../../types/Candidate";
+import {CandidateHasTvShow} from "../../../../types/candidateHasTvShow";
 
 @Component({
   selector: 'app-show',
@@ -16,6 +17,7 @@ export class ShowPage implements OnInit {
   show = {name: null};
   candidateOftheShow:Candidate = null;
   candidates: Array<Candidate> = [];
+  candidatesHasTvShow: Array<CandidateHasTvShow> = [];
   reciepes: Array<{}> = [];
 
 
@@ -31,10 +33,13 @@ export class ShowPage implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(async parameter => {
         const showId = parameter.id
-        this.getShow(parameter.id)
-        this.getAllCandidates();
+        this.getShow(showId)
+        // this.getAllCandidates();
         this.getReciepes();
-        this.getCandidatesByShow(showId);
+        // this.openCandidateByShow();
+        // this.getCandidatesByShow(showId);
+        // console.log(this.candidates)
+        // console.log(this.candidatesHasTvShow)
     })
   }
 
@@ -42,6 +47,8 @@ export class ShowPage implements OnInit {
         this.chooseShowService.getShow(id)
             .subscribe((show: any) => {
                     this.show = show;
+                    this.candidates = show.Candidates;
+                    console.log(show)
                 },
                 error => {
                     console.log('error', error)
@@ -91,9 +98,16 @@ export class ShowPage implements OnInit {
                 })
     }
 
-    openShowCandidateById(){
-      alert("hello world")
-    }
+    // openCandidateByShow() {
+    //     this.showService.openCandidateByShow()
+    //         .subscribe(
+    //             (candidatesHasTvShow: Array<CandidateHasTvShow>) => {
+    //                 this.candidatesHasTvShow = candidatesHasTvShow;
+    //             },
+    //             error => {
+    //                 console.log('error', error)
+    //             })
+    // }
 
     openReciepeById($reciepe: any = {}) {
         this.router.navigate(['home/reciepe/', $reciepe.id]);

@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'sign_in',
-        component: Sign_inPage
+        loadChildren: () => import('../profil/register/sign_in/sign_in.module').then(m => m.SignInModule)
       },
       {
         path: 'shows',
