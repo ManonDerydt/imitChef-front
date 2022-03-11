@@ -1,4 +1,5 @@
 export type Candidate = {
+    Reciepes: [];
     id : string,
     firstname : string,
     lastname : string,

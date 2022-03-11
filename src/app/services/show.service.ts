@@ -17,13 +17,8 @@ export class ShowService {
     getAllCandidates() {
         return this.api.get('/candidates');
     }
-
+    // Etape 4 : Fonction get vers le back
     getCandidateByShow(showId) {
         return this.api.get(`/candidateByShow/${showId}`);
     }
-
-    // openCandidateByShow() {
-    //     return this.api.get('/getCandidateByShowId');
-    // }
-
 }

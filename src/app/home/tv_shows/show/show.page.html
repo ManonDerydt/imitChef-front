@@ -17,11 +17,10 @@
 
   <div class="stories">
 
-<!--    Etape 1 : boucle sur le tableau des candidats   -->
     <div *ngFor="let candidate of candidates">
       <div>
         <div class="story">
-          <div class="img-box">
+          <div class="img-box" (click)="openReciepeOfCandidatesById()">
             <img src="{{ candidate.image }}">
           </div>
           <p>{{ candidate.firstname }}</p>
@@ -31,26 +30,30 @@
 
   </div>
 
-  <div *ngFor="let reciepe of reciepes" (click)="openReciepeById(reciepe)" >
+  <div *ngFor="let candidate of candidates">
 
-    <ion-item no-padding lines="none">
-      <ion-avatar slot="start"></ion-avatar>
-      <ion-icon slot="end" name="more"></ion-icon>
-    </ion-item>
-    <div >
-      <img class="post_img" src="{{ reciepe.image }}">
-      <div class="flex-button">
-        <div>
-          <ion-icon name="heart"></ion-icon>
-          <ion-icon name="text"></ion-icon>
-          <ion-icon name="send"></ion-icon>
+    <div *ngFor="let reciepe of candidate.Reciepes" (click)="openReciepeById(reciepe)">
+      <ion-item no-padding lines="none">
+        <ion-avatar slot="start">
+          <img src="{{ candidate.image }}">
+        </ion-avatar>
+        <ion-icon slot="end" name="more"></ion-icon>
+      </ion-item>
+      <div >
+        <img class="post_img" src="{{ reciepe.image }}">
+        <div class="flex-button">
+          <div>
+            <ion-icon name="heart"></ion-icon>
+            <ion-icon name="text"></ion-icon>
+            <ion-icon name="send"></ion-icon>
+          </div>
+          <ion-icon name="bookmark"></ion-icon>
         </div>
-        <ion-icon name="bookmark"></ion-icon>
+        <p class="insta-text"><b>2.875 Likes</b></p>
+        <p class="insta-text"><b>{{ reciepe.title }}</b>
+          {{ reciepe.description }}
+        </p>
       </div>
-      <p class="insta-text"><b>2.875 Likes</b></p>
-      <p class="insta-text"><b>{{ reciepe.title }}</b>
-        {{ reciepe.description }}
-      </p>
     </div>
 
   </div>

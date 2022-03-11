@@ -10,6 +10,7 @@ export class ReciepeService {
 
     constructor(private api: ApiService) {}
 
+    // Etape 4 : Fonction get vers le back
     getReciepeById(id: string) {
         return this.api.get(`/reciepe/${id}`);
     }

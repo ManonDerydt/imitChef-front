@@ -7,6 +7,7 @@ import {ChooseShowService} from "../../../services/chooseShow.service";
 import {ReciepeService} from "../../../services/reciepe.service";
 import type { Candidate } from "../../../../types/Candidate";
 import {CandidateHasTvShow} from "../../../../types/candidateHasTvShow";
+import {log} from "util";
 
 @Component({
   selector: 'app-show',
@@ -34,12 +35,8 @@ export class ShowPage implements OnInit {
     this.route.params.subscribe(async parameter => {
         const showId = parameter.id
         this.getShow(showId)
-        // this.getAllCandidates();
-        this.getReciepes();
-        // this.openCandidateByShow();
-        // this.getCandidatesByShow(showId);
-        // console.log(this.candidates)
-        // console.log(this.candidatesHasTvShow)
+        // console.log(this.reciepes)
+
     })
   }
 
@@ -48,7 +45,12 @@ export class ShowPage implements OnInit {
             .subscribe((show: any) => {
                     this.show = show;
                     this.candidates = show.Candidates;
-                    console.log(show)
+                    this.reciepes = show.Candidates.map(candidate =>
+                        candidate.Reciepes
+                    );
+                    console.log(this.reciepes)
+                    console.log(this.candidates)
+                    // console.log(this.candidates)
                 },
                 error => {
                     console.log('error', error)
@@ -77,40 +79,12 @@ export class ShowPage implements OnInit {
             })
     }
 
-    getReciepes() {
-        this.reciepeService.getReciepes()
-            .subscribe(
-                (reciepes: Array<{}>) => {
-                    this.reciepes = reciepes;
-                },
-                error => {
-                    console.log('error', error)
-                })
-    }
-
-    getReciepe(id: string) {
-        this.reciepeService.getReciepeById(id)
-            .subscribe((reciepe: any) => {
-                    this.reciepes = reciepe;
-                },
-                error => {
-                    console.log('error', error)
-                })
-    }
-
-    // openCandidateByShow() {
-    //     this.showService.openCandidateByShow()
-    //         .subscribe(
-    //             (candidatesHasTvShow: Array<CandidateHasTvShow>) => {
-    //                 this.candidatesHasTvShow = candidatesHasTvShow;
-    //             },
-    //             error => {
-    //                 console.log('error', error)
-    //             })
-    // }
-
     openReciepeById($reciepe: any = {}) {
         this.router.navigate(['home/reciepe/', $reciepe.id]);
+    }
+
+    openReciepeOfCandidatesById($candidate: any = {}) {
+        this.router.navigate(['home/reciepe/candidate', $candidate.id]);
     }
 
 }
