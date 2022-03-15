@@ -20,7 +20,7 @@
     <div *ngFor="let candidate of candidates">
       <div>
         <div class="story">
-          <div class="img-box" (click)="openReciepeOfCandidatesById()">
+          <div class="img-box" (click)="openReciepeOfCandidatesById(candidate)">
             <img src="{{ candidate.image }}">
           </div>
           <p>{{ candidate.firstname }}</p>

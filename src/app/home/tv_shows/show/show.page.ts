@@ -8,6 +8,7 @@ import {ReciepeService} from "../../../services/reciepe.service";
 import type { Candidate } from "../../../../types/Candidate";
 import {CandidateHasTvShow} from "../../../../types/candidateHasTvShow";
 import {log} from "util";
+import {Reciepe} from "../../../../types/Reciepe";
 
 @Component({
   selector: 'app-show',
@@ -20,6 +21,7 @@ export class ShowPage implements OnInit {
   candidates: Array<Candidate> = [];
   candidatesHasTvShow: Array<CandidateHasTvShow> = [];
   reciepes: Array<{}> = [];
+  candidate : Reciepe = null;
 
 
   constructor(
@@ -28,16 +30,17 @@ export class ShowPage implements OnInit {
       public reciepeService : ReciepeService,
       private route: ActivatedRoute,
       private router: Router
-
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe(async parameter => {
         const showId = parameter.id
         this.getShow(showId)
-        // console.log(this.reciepes)
+        // this.getCandidateOnClick(candidateId)
 
     })
+      // const candidateId = parameter.id
+      // this.getCandidateOnClick(candidateId)
   }
 
     getShow(id: string) {
@@ -48,25 +51,23 @@ export class ShowPage implements OnInit {
                     this.reciepes = show.Candidates.map(candidate =>
                         candidate.Reciepes
                     );
-                    console.log(this.reciepes)
                     console.log(this.candidates)
-                    // console.log(this.candidates)
                 },
                 error => {
                     console.log('error', error)
             })
     }
 
-    getCandidatesByShow(showId:string):void{
-        this.showService.getCandidateByShow(showId)
-            .subscribe(
-                (candidateOftheShow: Candidate) => {
-                    this.candidateOftheShow = candidateOftheShow;
-                },
-                error => {
-                    console.log('error', error)
-                })
-    }
+    // getCandidatesByShow(showId:string):void{
+    //     this.showService.getCandidateByShow(showId)
+    //         .subscribe(
+    //             (candidateOftheShow: Candidate) => {
+    //                 this.candidateOftheShow = candidateOftheShow;
+    //             },
+    //             error => {
+    //                 console.log('error', error)
+    //             })
+    // }
 
     getAllCandidates() {
         this.showService.getAllCandidates()
@@ -79,6 +80,34 @@ export class ShowPage implements OnInit {
             })
     }
 
+    // getReciepeById() {
+    //     this.route.params.subscribe(async parameter => {
+    //         const candidateId = Number(parameter.id)
+    //         this.showService.getCandidates()
+    //             .subscribe(
+    //                 (candidates: Array<Reciepe>) => {
+    //                     this.candidate = candidates.find(candidate => candidate.id === candidateId);
+    //                 },
+    //                 error => {
+    //                     console.log('error', error)
+    //                 })
+    //     })
+    // }
+
+    // getCandidateOnClick(id: string) {
+    //     this.showService.getCandidateOnClick(id)
+    //         .subscribe((candidate: any) => {
+    //                 this.candidate = candidate;
+    //                 // this.candidates = show.Candidates;
+    //                 // this.reciepes = show.Candidates.map(candidate =>
+    //                 //     candidate.Reciepes
+    //                 // );
+    //             },
+    //             error => {
+    //                 console.log('error', error)
+    //             })
+    // }
+
     openReciepeById($reciepe: any = {}) {
         this.router.navigate(['home/reciepe/', $reciepe.id]);
     }
@@ -86,5 +115,5 @@ export class ShowPage implements OnInit {
     openReciepeOfCandidatesById($candidate: any = {}) {
         this.router.navigate(['home/reciepe/candidate', $candidate.id]);
     }
-
 }
+

@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'reciepe',
         loadChildren: () => import('../home/reciepe/reciepe.module').then( m => m.ReciepePageModule)
       },
+      {
+        path: 'reciepes-by-candidates',
+        loadChildren: () => import('../home/tv_shows/show/reciepes-by-candidates/reciepes_by_candidates.module').then(m => m.ReciepesByCandidatesPageModule)
+      },
     ]
   }
 ];

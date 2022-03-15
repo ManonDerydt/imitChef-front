@@ -38,13 +38,14 @@ export class ReciepePage implements OnInit {
     this.route.params.subscribe(async parameter => {
       const reciepeId = Number(parameter.id)
       this.ReciepeService.getReciepes()
-          .subscribe(
-              (reciepes: Array<Reciepe>) => {
-                this.reciepe = reciepes.find(reciepe => reciepe.id === reciepeId);
-              },
-              error => {
-                console.log('error', error)
-              })
+      .subscribe(
+          (reciepes: Array<Reciepe>) => {
+            this.reciepe = reciepes.find(reciepe => reciepe.id === reciepeId);
+            console.log(this.reciepe)
+          },
+          error => {
+            console.log('error', error)
+          })
     })
 
   }

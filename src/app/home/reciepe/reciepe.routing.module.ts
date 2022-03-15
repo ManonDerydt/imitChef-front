@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: ':id',
     component: ReciepePage
-  }
+  },
+  // {
+  //   path: 'candidate/:id',
+  //   component: ShowPage
+  // }
 ];
 
 @NgModule({

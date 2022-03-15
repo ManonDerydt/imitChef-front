@@ -1,6 +1,6 @@
 export type Candidate = {
     Reciepes: [];
-    id : string,
+    id : number,
     firstname : string,
     lastname : string,
     tv_show : string,
