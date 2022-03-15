@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuPage } from './menu.page';
 
-import {WelcomePage} from "../welcome_page/welcome.page";
-import {Sign_inPage} from "../profil/register/sign_in/sign_in.page";
-import {AgoraPage} from "../community/agora/agora.page";
+import { WelcomePage } from "../welcome_page/welcome.page";
+import { Sign_inPage } from "../profil/register/sign_in/sign_in.page";
+import { AgoraPage } from "../community/agora/agora.page";
 
 const routes: Routes = [
   {
@@ -24,13 +24,17 @@ const routes: Routes = [
         loadChildren: () => import('../home/tv_shows/tv_shows.module').then(m => m.Tv_showsModule)
       },
       {
-        path: 'reciepe',
-        loadChildren: () => import('../home/reciepe/reciepe.module').then( m => m.ReciepePageModule)
+        path: 'candidates',
+        loadChildren: () => import('../home/candidates/candidates.module').then(m => m.CandidatesModule)
       },
       {
-        path: 'reciepes-by-candidates',
-        loadChildren: () => import('../home/tv_shows/show/reciepes-by-candidates/reciepes_by_candidates.module').then(m => m.ReciepesByCandidatesPageModule)
+        path: 'reciepe',
+        loadChildren: () => import('../home/reciepe/reciepe.module').then(m => m.ReciepePageModule)
       },
+      // {
+      //   path: 'reciepes-by-candidates',
+      //   loadChildren: () => import('../home/tv_shows/show/reciepes-by-candidates/reciepes_by_candidates.module').then(m => m.ReciepesByCandidatesPageModule)
+      // },
     ]
   }
 ];
@@ -38,4 +42,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class MenuPageRoutingModule {}
+export class MenuPageRoutingModule { }

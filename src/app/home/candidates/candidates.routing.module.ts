@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ChooseShowPage } from './choose-show/choose-show.page';
-import {ShowPage} from "./show/show.page";
+import { CandidateComponent } from './candidate/candidate.component';
 
 
 const routes: Routes = [
   {
-    path: '',
-    component: ChooseShowPage
-  },
-  {
     path: ':id',
-    component: ShowPage
+    component: CandidateComponent
   },
 
 ];
@@ -20,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class Tv_showsRoutingModule {}
+export class CandidatesRoutingModule { }
