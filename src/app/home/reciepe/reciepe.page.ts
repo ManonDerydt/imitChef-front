@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ShowService} from "../../services/show.service";
 import {ReciepeService} from "../../services/reciepe.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import type {Reciepe} from "../../../types/Reciepe";
+import {Reciepe} from "../../models/reciepe";
 
 @Component({
   selector: 'app-reciepe',
