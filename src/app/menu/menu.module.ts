@@ -9,7 +9,6 @@ import { MenuPageRoutingModule } from './menu-routing.module';
 import {MenuPage } from './menu.page';
 import {WelcomePage} from "../welcome_page/welcome.page";
 import {AgoraPage} from "../community/agora/agora.page";
-import {Sign_inPage} from "../profil/register/sign_in/sign_in.page";
 import {RouterModule} from "@angular/router";
 
 @NgModule({
@@ -26,7 +25,6 @@ import {RouterModule} from "@angular/router";
       MenuPage,
       WelcomePage,
       AgoraPage,
-      Sign_inPage,
   ]
 })
 export class MenuPageModule {}

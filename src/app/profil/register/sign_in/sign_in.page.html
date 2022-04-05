@@ -82,9 +82,9 @@
         <ion-label color="danger" *ngIf="f.password.errors.required">
           Veuillez indiquez un mot de passe
         </ion-label>
-<!--        <ion-label color="danger" *ngIf="f.password.errors.pattern">-->
-<!--          Le mot de passe doit contenir au minimum 8 caractères, une minuscule, un majuscule et un chiffre.-->
-<!--        </ion-label>-->
+        <ion-label color="danger" *ngIf="f.password.errors.pattern">
+          Le mot de passe doit contenir au minimum 8 caractères, une minuscule, un majuscule et un chiffre.
+        </ion-label>
       </div>
 
 
@@ -96,7 +96,7 @@
 
       <ion-button type="submit" color="light" fill="outline" shape="round" expand="block" routerLink="/connexion">Connexion</ion-button>
       <br>
-      <ion-button shape="round" expand="block" type="submit" [disabled]="!formContact.valid">Inscription</ion-button>
+      <ion-button shape="round" expand="block" type="submit">Inscription</ion-button>
 
       <ion-item lines="none">
         <ion-label color="light" class="ion-text-center">Ou connectez-vous avec</ion-label>

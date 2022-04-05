@@ -32,8 +32,10 @@ export class Sign_inPage implements OnInit {
       this.formContact = this.formBuilder.group({
         lastname: ['', [Validators.required]],
         firstname: ['', [Validators.required]],
-        password: ['', [Validators.required]],
-        email: ['', [Validators.required]]
+        password: ['', [Validators.required,
+          // Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/)]
+          ]],
+        email: ['', [Validators.required, Validators.email]]
       });
     }
 
@@ -42,16 +44,14 @@ export class Sign_inPage implements OnInit {
     }
 
   register(){
-
     this.submitted = true;
-
-    if(this.formContact.invalid){
-      alert("Le formulaire n'est pas correct");
-      return;
-    }else{
+    if(this.formContact.valid){
       let user = this.formContact.value;
-
-      return this.userService.createUser(user).subscribe(res=>console.log(res));
+      return this.userService.createUser(user).subscribe(res=> {
+        console.log(res)
+      }, error => {
+        console.error(error)
+      });
     }
 
   }

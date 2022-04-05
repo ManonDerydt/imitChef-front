@@ -8,7 +8,6 @@
 <ion-content>
 
   <h1 *ngIf="show">{{ show.name }}</h1>
-<!--  <h2 *ngIf="candidateOftheShow">{{ candidateOftheShow.tv_show }}</h2>-->
   <ion-buttons slot="start">
     <ion-button color="dark">
       <ion-icon slot="icon-only" name="camera"></ion-icon>
@@ -20,7 +19,7 @@
     <div *ngFor="let candidate of candidates">
       <div>
         <div class="story">
-          <div class="img-box" (click)="openReciepeOfCandidatesById(candidate)">
+          <div class="img-box" (click)="goToCandidate(candidate)">
             <img src="{{ candidate.image }}">
           </div>
           <p>{{ candidate.firstname }}</p>
@@ -50,7 +49,7 @@
           <ion-icon name="bookmark"></ion-icon>
         </div>
         <p class="insta-text"><b>2.875 Likes</b></p>
-        <p class="insta-text"><b>{{ reciepe.title }}</b>
+        <p class="insta-text"><b>{{ reciepe.titre }}</b>
           {{ reciepe.description }}
         </p>
       </div>

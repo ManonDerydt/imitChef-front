@@ -53,7 +53,7 @@ export class ShowPage implements OnInit {
         this.router.navigate(['home/reciepe/', $reciepe.id]);
     }
 
-    openReciepeOfCandidatesById($candidate: any = {}) {
+    goToCandidate($candidate: any = {}) {
         this.router.navigate(['home/candidates', $candidate.id]);
     }
 }
