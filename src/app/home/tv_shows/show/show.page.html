@@ -1,13 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-back-button color="warning" slot="start"></ion-back-button>
-    <ion-title>Show</ion-title>
+    <ion-back-button class="button-back" slot="start"></ion-back-button>
+    <ion-title>{{ show.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <h1 *ngIf="show">{{ show.name }}</h1>
   <ion-buttons slot="start">
     <ion-button color="dark">
       <ion-icon slot="icon-only" name="camera"></ion-icon>
@@ -22,37 +21,37 @@
           <div class="img-box" (click)="goToCandidate(candidate)">
             <img src="{{ candidate.image }}">
           </div>
-          <p>{{ candidate.firstname }}</p>
+          <p class="firstname">{{ candidate.firstname }}</p>
         </div>
       </div>
     </div>
 
   </div>
 
+  <hr>
+
   <div *ngFor="let candidate of candidates">
 
     <div *ngFor="let reciepe of candidate.Reciepes" (click)="openReciepeById(reciepe)">
-      <ion-item no-padding lines="none">
+      <div class="header-avatar">
         <ion-avatar slot="start">
           <img src="{{ candidate.image }}">
         </ion-avatar>
+        <h3 class="name-avatar">{{candidate.firstname}}</h3>
         <ion-icon slot="end" name="more"></ion-icon>
-      </ion-item>
-      <div >
+      </div>
+      <div>
         <img class="post_img" src="{{ reciepe.image }}">
+
         <div class="flex-button">
-          <div>
-            <ion-icon name="heart"></ion-icon>
-            <ion-icon name="text"></ion-icon>
-            <ion-icon name="send"></ion-icon>
-          </div>
-          <ion-icon name="bookmark"></ion-icon>
+          <div></div>
+          <ion-icon name="heart" class="heart-icon"></ion-icon>
         </div>
-        <p class="insta-text"><b>2.875 Likes</b></p>
-        <p class="insta-text"><b>{{ reciepe.titre }}</b>
+        <p class="insta-text"><b>{{ reciepe.titre }} : </b>
           {{ reciepe.description }}
         </p>
       </div>
+
     </div>
 
   </div>

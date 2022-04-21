@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { CandidatesService } from 'src/app/services/candidates.service';
 import { Candidate } from '../../../models/candidate';
 
@@ -13,7 +13,8 @@ export class CandidateComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private candidateService: CandidatesService
+    private candidateService: CandidatesService,
+    private router: Router
   ) {
     this.route.params.subscribe(async parameter => {
       const candidateId: string = parameter.id
@@ -34,5 +35,9 @@ export class CandidateComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  goToReciepe($reciepe: any = {}) {
+    this.router.navigate(['home/reciepe/', $reciepe.id]);
+  }
 
 }

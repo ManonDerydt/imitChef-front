@@ -1,0 +1,47 @@
+.image-ronde-bg{
+  width: 275px;
+  height: 275px;
+  border: 6px solid #FF8D8D;
+  border-radius: 143px;
+  margin-top: -30%;
+  margin-left: 22%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.title{
+  padding: 15px;
+}
+
+.img-welcome{
+  height: 190px;
+  object-fit: cover;
+}
+
+.post_img{
+  height: 265px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.flex-button{
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart-icon{
+  margin-right: 8% !important;
+  border: 2px solid #444;
+  padding: 6px;
+  border-radius: 19px;
+  margin-top: -50% !important;
+  background-color: white;
+  color: #FF8D8D !important;
+}
+
+.insta-text{
+  font-size: 18px;
+  font-family: 'EB Garamond', serif;
+  margin-left: 5%;
+  margin-right: 2%;
+}

@@ -1,6 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button color="warning" slot="start"></ion-back-button>
+    <ion-title class="title">Découvrez les plats de {{ candidate.firstname }} ! </ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <ion-item *ngFor="let reciepe of candidate.Reciepes">
-    <ion-label>{{candidate.firstname}} {{candidate.lastname}}</ion-label>
-    <p>{{reciepe.titre}}</p>
-  </ion-item>
+  <div class="background-image">
+    <img src="/assets/back-food.png" alt="toque" class="img-welcome">
+  </div>
+  <div *ngFor="let reciepe of candidate.Reciepes; let i = index" class="content-header">
+    <div *ngIf="i%2 == 0">
+      <img src="{{candidate.image}}" class="image-rond image-ronde-bg">
+    </div>
+    <p *ngIf="i%2 == 0" ></p>
+  </div>
+
+  <div *ngFor="let reciepe of candidate.Reciepes" (click)="goToReciepe(reciepe)">
+    <div>
+      <ion-item no-padding lines="none">
+        <ion-avatar slot="start img-box">
+          <img src="{{ candidate.image }}">
+        </ion-avatar>
+        <ion-icon slot="end" name="more"></ion-icon>
+      </ion-item>
+    </div>
+
+    <div>
+      <img class="post_img" src="{{ reciepe.image }}">
+
+      <div class="flex-button">
+        <div></div>
+        <ion-icon name="heart" class="heart-icon"></ion-icon>
+      </div>
+      <p class="insta-text"><b>{{ reciepe.titre }} : </b>
+        {{ reciepe.description }}
+      </p>
+    </div>
+
+  </div>
+
 </ion-content>

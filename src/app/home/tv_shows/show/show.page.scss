@@ -1,3 +1,7 @@
+.button-back{
+  color: #FF6859;
+}
+
 ion-header img{
   height: 80px;
   margin-top: 4px;
@@ -8,6 +12,21 @@ ion-header img{
   text-align: center;
 }
 
+.header-avatar{
+  display: flex;
+}
+
+.name-avatar{
+  margin-left: 5%;
+  margin-top: 8%;
+  font-family: 'EB Garamond', serif;
+  font-size: 25px;
+}
+
+.firstname{
+  font-family: 'EB Garamond', serif;
+}
+
 .text-stories{
   display: flex;
   justify-content: space-between;
@@ -16,30 +35,36 @@ ion-header img{
   color: #171717;
   margin-left: 7px;
   margin-right: 7px;
+  font-family: 'EB Garamond', serif;
 }
 
 .stories{
   display: flex !important;
   overflow: scroll !important;
+  margin-top: 7%;
+  padding: 1px;
+
 }
 
 .stories .img-box{
-  margin-left: 8px;
+  margin-left: 15px;
   margin-right: 12px;
-  background-image: url("../../../../assets/color-instagram.jpg");
+  border: 2px solid #FF8D8D;
   background-size: contain;
   border-radius: 50%;
   padding: 2px;
-  height: 60px;
+  height: 66px;
 }
 
 .stories img{
-  width: 68px;
+  width: 65px;
   max-width: none;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid white;
+  /* border: 3px solid white; */
   margin-bottom: -3px;
+  height: 58px;
+  object-fit: cover;
 }
 
 .stories p{
@@ -73,16 +98,16 @@ hr{
 }
 
 ion-avatar{
-  margin-left: 8px;
-  margin-right: 12px;
-  background-image: url("../../../../assets/color-instagram.jpg");
+  border: 2px solid #FF8D8D;
   background-size: contain;
   border-radius: 50%;
   padding: 2px;
-}
-
-ion-avatar img{
-  border: 2px solid white;
+  height: 90px;
+  width: 90px;
+  margin-bottom: -10%;
+  margin-top: 4%;
+  z-index: 10;
+  margin-left: 8%;
 }
 
 ion-label{
@@ -92,8 +117,20 @@ ion-label{
   margin-left: 5px;
 }
 
+.heart-icon{
+  margin-right: 8% !important;
+  border: 2px solid #444;
+  padding: 6px;
+  border-radius: 19px;
+  margin-top: -50% !important;
+  background-color: white;
+  color: #FF8D8D !important;
+}
+
 .post_img{
+  height: 265px;
   width: 100%;
+  object-fit: cover;
 }
 
 .flex-button{
@@ -108,18 +145,12 @@ ion-label{
 }
 
 .insta-text{
-  font-size: 15px;
-  margin: 4px;
+  font-size: 18px;
+  font-family: 'EB Garamond', serif;
+  margin-left: 5%;
+  margin-right: 2%;
 }
 
-.button-favorite{
-  color: blue;
-}
-
-.button-favorite:active {
-  color: red;
-}
-
-.background-top-chef{
-  background-color: orange;
+.img-candidate{
+  margin-bottom: 5%;
 }

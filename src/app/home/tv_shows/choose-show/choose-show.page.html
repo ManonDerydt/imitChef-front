@@ -1,22 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="header">
-      <h1 class="title">ImitChef</h1>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
+    <h2 class="title-choose-show">Choisissez votre <br>émission</h2>
+    <hr class="hr">
+    <div *ngFor="let show of shows" (click)="openShowById(show)">
 
-    <h2>Choisissez votre émission</h2>
+        <div class="button-tv-show">
+            <img class="img-show" src="{{ show.image }}" alt="{{ show.name }}">
+        </div>
+        <div class="ion-text-center title-show">
+            <p class="name-show"><b>{{ show.name }}</b></p>
+        </div>
 
-<div *ngFor="let show of shows" (click)="openShowById(show)">
-    <div class="flex">
-        <ion-card class="button-tv-show">
-            <img src="{{ show.image }}" alt="{{ show.name }}">
-            <p>{{ show.name }}</p>
-        </ion-card>
     </div>
-</div>
-
 </ion-content>
+
 

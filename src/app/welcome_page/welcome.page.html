@@ -1,21 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="header">
-      <h1 class="title">ImitChef</h1>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-<div class="block-home-page">
-  <h2 class="font-home-page-title">Bienvenue sur</h2>
-  <h2>ImitChef</h2>
-  <h2 class="font-home-page-title">La plateforme qui rassemble vos</h2>
-</div>
-<img src="/assets/chef-1.jpg" alt="toque">
+    <div class="background">
+        <div class="block-home-page">
+            <h2 class="font-home-page-title">Bienvenue sur</h2>
+            <div class="title">
+                <img src="assets/logo.png" class="img-title">
+            </div>
 
-  <a>
-    <ion-button shape="round" expand="block" [routerLink]="['/home/shows']" class="button-home" color="warning">Choisissez votre émission</ion-button>
-  </a>
+            <h2 class="description">
+                La plateforme qui rassemble toutes les recettes des <b>shows culinaires français</b> !
+<!--                adaptée à toutes tes envies et à ton budget. Déguste le plat d'un candidat de top chef directement au <b>restaurant</b> !-->
+            </h2>
+        </div>
+        <div class="background-image">
+            <img src="/assets/top-chef/plats-top-chef/plat-1-top.jpg" alt="toque" class="img-welcome">
+        </div>
+    </div>
+
+    <a>
+        <div expand="block" [routerLink]="['/home/shows']" class="button-home" >
+            <button class="text-button ion-padding-top">Choisissez votre émission</button>
+        </div>
+    </a>
 
 </ion-content>
+
+

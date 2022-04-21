@@ -1,10 +1,18 @@
+ion-content{
+  --ion-background-color: whitesmoke;
+}
+
 .header{
-  background-color: orange;
+  background-color: #FF6859;
 }
 
 .title{
-  text-align: center;
-  color: white;
+  justify-content: center;
+  display: flex;
+}
+
+.img-title{
+  width: 25%;
 }
 
 .content-home{
@@ -24,6 +32,22 @@
   margin-top: 10%;
 }
 
+.background-image{
+  background-image: url("../../assets/back-food.png");
+  height: 340px;
+}
+
+.img-welcome{
+  border-radius: 100%;
+  border: 15px solid #FF6859;
+  width: 72%;
+  margin-left: 15%;
+  margin-bottom: 10%;
+  height: 340px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .event-button, .activity-button{
   width: 80%;
   margin-left: 10%;
@@ -31,19 +55,40 @@
   color: white;
 }
 
+.description{
+  font-size: 25px;
+  color: #444;
+  font-family: 'EB Garamond', serif;
+}
+
 .font-home-page-title{
-  font-size: 20px;
+  font-size: 35px;
+  font-family: 'Abril Fatface', cursive;
+  color: #444;
+  margin-bottom: 7%;
+}
+
+.text-button{
+  font-size: 25px;
+  color: white;
+  font-family: 'EB Garamond', serif;
+  background-color: #FF6859;
 }
 
 .block-home-page{
   text-align: center;
-  margin: 2%;
+  margin: 10%;
 }
 
 .button-home{
+  margin-top: 15%;
   width: 80%;
-  margin: 0 auto;
   padding: 5px;
   color: white;
-  height: 55px;
+  height: 70px;
+  background-color: #FF6859;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 10%;
 }

@@ -1,8 +1,59 @@
-.button-tv-show{
-  height: 200px;
-  width: 50%;
+ion-content{
+  --ion-background-color: whitesmoke;
 }
 
-.flex{
+.title-choose-show{
+  margin-top: 10%;
+  margin-left: 15%;
+  margin-bottom: 10%;
+  font-size: 43px;
+  font-family: 'EB Garamond', serif;
+  color: #444;
+}
+
+.button-tv-show{
   display: flex;
+}
+
+.hr{
+  width: 55%;
+  background-color: #FF6859;
+  margin-top: -5%;
+  height: 4px;
+  margin-bottom: 10%;
+  margin-left: 15%;
+  border-radius: 19px
+}
+
+.img-show{
+  display: flex;
+  border-radius: 20px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 250px;
+  width: 80%;
+  text-align: center;
+  margin-left: 10%;
+  margin-bottom: 8%;
+  z-index: -1;
+}
+
+.name-show{
+  padding-top: 5%;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: 'EB Garamond', serif;
+}
+
+.title-show{
+  margin-top: -18%;
+  margin-left: 22%;
+  margin-bottom: 10%;
+  z-index: 3;
+  width: 55%;
+  border-radius: 10px;
+  height: 60px;
+  background-color: #FF6859;
+  filter: opacity(99%);
+  color: white;
 }
