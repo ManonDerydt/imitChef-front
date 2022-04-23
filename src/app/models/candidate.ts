@@ -1,4 +1,4 @@
-import { Reciepe} from "./reciepe";
+import { Reciepe } from "./reciepe";
 
 export class Candidate {
     id: number;

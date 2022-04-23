@@ -17,6 +17,7 @@ export class CandidateComponent implements OnInit {
     private router: Router
   ) {
     this.route.params.subscribe(async parameter => {
+
       const candidateId: string = parameter.id
       this.candidateService.getCandidateById(candidateId)
         .subscribe((candidate: Candidate) => {

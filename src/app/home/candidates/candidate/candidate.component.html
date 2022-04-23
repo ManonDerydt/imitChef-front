@@ -17,14 +17,6 @@
   </div>
 
   <div *ngFor="let reciepe of candidate.Reciepes" (click)="goToReciepe(reciepe)">
-    <div>
-      <ion-item no-padding lines="none">
-        <ion-avatar slot="start img-box">
-          <img src="{{ candidate.image }}">
-        </ion-avatar>
-        <ion-icon slot="end" name="more"></ion-icon>
-      </ion-item>
-    </div>
 
     <div>
       <img class="post_img" src="{{ reciepe.image }}">

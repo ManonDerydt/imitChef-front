@@ -10,12 +10,9 @@ export class ReciepeService {
 
     constructor(private api: ApiService) {}
 
-    getReciepeById(id: string) {
-        return this.api.get(`/reciepe/${id}`);
-    }
 
-    getReciepes() {
-        return this.api.get(`/reciepe`);
+    getReciepes(reciepeId: string) {
+        return this.api.get(`/reciepe/` + reciepeId);
     }
 
 

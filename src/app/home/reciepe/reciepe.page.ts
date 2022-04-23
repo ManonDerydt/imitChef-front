@@ -3,6 +3,7 @@ import {ShowService} from "../../services/show.service";
 import {ReciepeService} from "../../services/reciepe.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Reciepe} from "../../models/reciepe";
+import {Candidate} from "../../models/candidate";
 
 @Component({
   selector: 'app-reciepe',
@@ -14,56 +15,36 @@ export class ReciepePage implements OnInit {
 
 
   constructor(
-      public showService : ShowService,
       public ReciepeService : ReciepeService,
       private route: ActivatedRoute,
-      private router: Router
+
   ) { }
 
   ngOnInit() {
     this.getReciepe();
   }
 
-  // getReciepeById(id: string) {
-  //   this.ReciepeService.getReciepeById(id)
-  //       .subscribe((reciepe: any) => {
-  //             this.reciepe = reciepe;
-  //           },
-  //           error => {
-  //             console.log('error', error)
-  //           })
-  // }
-
   getReciepe() {
     this.route.params.subscribe(async parameter => {
-      const reciepeId = Number(parameter.id)
-      this.ReciepeService.getReciepes()
-      .subscribe(
-          (reciepes: Array<Reciepe>) => {
-            this.reciepe = reciepes.find(reciepe => reciepe.id === reciepeId);
-            console.log(this.reciepe)
-          },
-          error => {
-            console.log('error', error)
-          })
+
+      const reciepeId: string = parameter.id
+      this.ReciepeService.getReciepes(reciepeId)
+          .subscribe((reciepe: Reciepe) => {
+                this.reciepe = reciepe;
+                console.log(this.reciepe);
+
+              },
+              error => {
+                console.log(error);
+
+              })
     })
 
   }
 
-    // openShowById($reciepe: any = {}) {
-    //     // @ts-ignore
-    //     this.router.navigate(['home/reciepe', $reciepe.id]);
-    // }
-
-    // getReciepe(id: string) {
-    //     this.ReciepeService.getReciepeById(id)
-    //         .subscribe((reciepe: any) => {
-    //                 this.reciepe = reciepe;
-    //             },
-    //             error => {
-    //                 console.log('error', error)
-    //             })
-    // }
+  displayPlate(){
+    alert("Malheureusement, cette option n'est pas encore disponible :(")
+  }
 
   reciepes = [
     {
