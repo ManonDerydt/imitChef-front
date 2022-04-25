@@ -1,24 +1,55 @@
-<div *ngIf="reciepe">
+<ion-header>
 
-  <img class="post_img" src="{{ reciepe.image }}">
-    <div class="block-description">
-        <h2>{{ reciepe.titre }}</h2>
-        <p>{{ reciepe.description }}</p>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="reciepe">
+        <img class="post_img" src="{{ reciepe.image }}">
+<!--            <div class="flex-button">-->
+<!--                <ion-icon name="heart" class="heart-icon"></ion-icon>-->
+<!--            </div>-->
+
+        <div class="time_cooking">
+            <p class="text_time">Temps total : {{ reciepe.time_cooking }} minutes</p>
+        </div>
+
+        <div class="block-description">
+            <h2>{{ reciepe.titre }}</h2>
+            <p>{{ reciepe.description }}</p>
+        </div>
+
+        <hr class="hr">
+
+        <div class="block-reciepe">
+            <p>Difficulté : {{ reciepe.difficulty}}</p>
+            <p *ngFor="let material of reciepe.Materials">Matériel nécessaire : {{material.Grill}}</p>
+            <p *ngFor="let ingredient of reciepe.Ingredients">Ingrédients :
+                {{ingredient.poultry}},
+                {{ingredient.peper}}
+            </p>
+        </div>
+
+        <hr class="hr">
+
+        <div *ngFor="let step of reciepe.Steps" lines="none">
+            <h2 class="number-step">Étape 1</h2>
+            <p class="step">{{step.first_step}}</p>
+
+            <h2 class="number-step">Étape 2</h2>
+            <p class="step">{{step.second_step}}</p>
+
+            <h2 class="number-step">Étape 3</h2>
+            <p class="step">{{step.third_step}}</p>
+
+            <h2 class="number-step">Étape 4</h2>
+            <p class="step">{{step.fourth_step}}</p>
+        </div>
+
+        <div class="button-cook">
+            <p class="command-restaurant btn-1" (click)="displayPlate()">Cuisiner</p>
+            <p class="command-restaurant btn-2" (click)="displayPlate()">Réserver</p>
+            <p class="command-restaurant btn-3" (click)="displayPlate()">Commander</p>
+        </div>
+
     </div>
-
-    <hr>
-
-    <ion-list lines="none">
-      <ion-item>Temps de cuisson : {{ reciepe.time_cooking}} min.</ion-item>
-      <ion-item>Difficulté : {{ reciepe.difficulty}}</ion-item>
-      <ion-item>Matériel nécessaire : </ion-item>
-      <ion-item *ngFor="let ingredient of reciepe.Ingredients">Ingrédients :
-          {{ingredient.poultry}}
-          {{ingredient.peper}}
-      </ion-item>
-    </ion-list>
-
-    <div color="danger" expand="block" shape="round" class="command-restaurant" (click)="displayPlate()">Voulez-vous commander ce plat ?</div>
-
-
-</div>
+</ion-content>

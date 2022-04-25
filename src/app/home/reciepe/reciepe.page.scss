@@ -1,25 +1,65 @@
+.time_cooking{
+  border: 1px solid whitesmoke;
+  margin-left: 5%;
+  width: 90%;
+  margin-top: 5%;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  color: #444;
+}
+
+.text_time{
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  margin-left: 5%;
+}
+
 .post_img{
   border-bottom-right-radius: 35px;
   border-bottom-left-radius: 35px;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .block-description{
   font-family: 'EB Garamond', serif;
-  margin-left: 5%;
+  margin-left: 6%;
   margin-right: 5%;
 }
 
+.hr{
+  width: 90%;
+  width: 90%;
+  height: 1px;
+  background-color: #444;
+  border-radius: 40px;
+}
+
 .command-restaurant{
-  height: 60px;
-  width: 80%;
-  margin: 0 auto;
-  background: #FF6859;
+  height: 57px;
+  width: 30%;
   font-family: 'EB Garamond', serif;
-  border-radius: 27px;
-  color: white;
+  border-radius: 30px;
+  color: #444;
   padding-top: 10px;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
+  color: #FF6859;
+  border: 2px solid #FF6859;
+}
+
+.icon-button{
+  height: 25px;
+}
+
+.button-cook{
+  display: flex;
+  margin-top: 5%;
+  justify-content: space-between;
+  background: whitesmoke;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .ingredient{
@@ -29,3 +69,33 @@
   width: 118px;
   object-fit: contain;
 }
+
+.number-step{
+  font-family: 'EB Garamond', serif;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #FF6859;
+}
+
+.step{
+  font-family: 'EB Garamond', serif;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.block-reciepe{
+  font-family: 'EB Garamond', serif;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.heart-icon{
+  margin-right: 8% !important;
+  border: 2px solid #444;
+  padding: 6px;
+  border-radius: 19px;
+  margin-top: -50% !important;
+  background-color: white;
+  color: #FF8D8D !important;
+}
+
