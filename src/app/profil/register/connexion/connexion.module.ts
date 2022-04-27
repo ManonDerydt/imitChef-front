@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ConnexionPageRoutingModule } from './connexion-routing.module';
 
 import { ConnexionPage } from './connexion.page';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { ConnexionPage } from './connexion.page';
     FormsModule,
     IonicModule,
     ConnexionPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   declarations: [ConnexionPage]
 })

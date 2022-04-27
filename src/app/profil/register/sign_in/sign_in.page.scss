@@ -1,6 +1,10 @@
 ion-content{
-  --ion-background-color: -webkit-linear-gradient(to bottom, #fdc830, #f37335); /* Chrome 10-25, Safari 5.1-6 */
-  --ion-background-color: linear-gradient(to bottom, #fdc830, #f37335); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  --ion-background-color: whitesmoke;
+}
+
+.img-title{
+  width: 55%;
+  margin-left: 25%;
 }
 
 ion-item{
@@ -27,4 +31,61 @@ ion-item{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) ;
+}
+
+.text-form{
+  color: #444;
+  font-family: 'EB Garamond', serif;
+}
+
+.form{
+  border: 2px solid #FF6859;
+  background-color: white;
+  padding: 5px;
+  border-radius: 35px;
+  margin-bottom: 5%;
+  width: 85%;
+  margin-left: 8%
+}
+
+.btn-connexion{
+  color: #FF6859;
+  border-radius: 44px;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 8%;
+}
+
+.inscription-btn{
+  width: 85%;
+  margin: 0 auto;
+  height: 65px;
+  background-color: #FF6859;
+  boder-radius: 68px;
+  border-radius: 35px;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #FF6859;
+
+  .text-connexion{
+    margin-left: 35%;
+    font-size: 20px;
+  }
+
+  .text-sign-in{
+    text-transform: capitalize;
+    font-size: 25px;
+    font-family: 'EB Garamond', serif;
+  }
+
+}
+
+.hr{
+  height: 2px;
+  width: 50%;
+  background-color: #FF6859;
+}0
+
+.error-message{
+  margin-left: 10% !important;
 }

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Validators, FormGroup, FormBuilder, FormControl} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from "@angular/common/http";
-import {UserService} from "../../../services/user.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-connexion',
@@ -15,14 +15,29 @@ export class ConnexionPage implements OnInit {
   user: any;
   formContact : FormGroup;
   version: string;
+  auth: any[];
+  dataUser = {
+    email : "",
+    password : ""
+  }
+  connected: boolean;
 
   constructor(
       private route: ActivatedRoute,
       private formBuilder: FormBuilder,
-      private httpClient: HttpClient,
-      // private userService: UserService,
-  ) {
+      private http: HttpClient,
+      private router: Router,
 
+  ) {
+    // this.afAuth.authState.subscribe(auth => {
+    //   if (!auth) {
+    //     console.log("Non connecté !")
+    //     this.connected = false;
+    //   }else {
+    //     console.log("Connecté !")
+    //     this.connected = true;
+    //   }
+    // })
   }
 
   ngOnInit() {

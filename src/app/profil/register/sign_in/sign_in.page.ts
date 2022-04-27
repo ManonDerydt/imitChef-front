@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Validators, FormGroup, FormBuilder, FormControl} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../../services/user.service";
 import {log} from "util";
@@ -25,6 +25,7 @@ export class Sign_inPage implements OnInit {
       private formBuilder: FormBuilder,
       private httpClient: HttpClient,
       private userService: UserService,
+      private router: Router
 
   ) {}
 
@@ -49,6 +50,8 @@ export class Sign_inPage implements OnInit {
       let user = this.formContact.value;
       return this.userService.createUser(user).subscribe(res=> {
         console.log(res)
+        alert("Vos coordonnées ont bien été enregistrées !")
+        this.router.navigate(['/home/account']);
       }, error => {
         console.error(error)
       });

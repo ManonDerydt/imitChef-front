@@ -5,6 +5,7 @@ import { MenuPage } from './menu.page';
 import { WelcomePage } from "../welcome_page/welcome.page";
 import { Sign_inPage } from "../profil/register/sign_in/sign_in.page";
 import { AgoraPage } from "../community/agora/agora.page";
+import {ConnexionPageModule} from "../profil/register/connexion/connexion.module";
 
 const routes: Routes = [
   {
@@ -18,6 +19,14 @@ const routes: Routes = [
       {
         path: 'sign_in',
         loadChildren: () => import('../profil/register/sign_in/sign_in.module').then(m => m.SignInModule)
+      },
+      {
+        path: 'connexion',
+        loadChildren: () => import('../profil/register/connexion/connexion.module').then(m => m.ConnexionPageModule)
+      },
+      {
+        path: 'account',
+        loadChildren: () => import('../profil/account/account.module').then(m => m.AccountPageModule)
       },
       {
         path: 'shows',

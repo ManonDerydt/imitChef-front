@@ -6,34 +6,30 @@
       <img src="assets/ic-log.png" class="img-title">
     </div>
 
-    <form [formGroup]="formContact" novalidate (ngSubmit)="register()">
+    <form [formGroup]="formContact" novalidate (ngSubmit)="register()" class="register">
 
 <!--------------------------------------  NOM ------------------------------------>
     <ion-list class="ion-no-padding">
-      <ion-item tappable>
-        <ion-label color="light">Nom</ion-label>
+      <ion-item tappable class="form" lines="none">
         <ion-input
                    formControlName="lastname"
-                   color="light"
                    placeholder="Nom"
                    type="text"
                    name="lastname" required
                    [class.invalid]="!f.lastname.valid && f.lastname.dirty"></ion-input>
       </ion-item>
 
-      <div class="" *ngIf="submitted && f.lastname.errors">
-        <ion-label color="danger" *ngIf="f.lastname.errors.required">Veuillez indiquer votre nom</ion-label>
+      <div class="error-message" *ngIf="submitted && f.lastname.errors">
+        <ion-label color="danger" *ngIf="f.lastname.errors.required" >Veuillez indiquer votre nom</ion-label>
       </div>
 
  <!--------------------------------------  NOM ------------------------------------>
 
  <!-------------------------------------- PRENOM ------------------------------------>
 
-      <ion-item>
-        <ion-label color="light">Prénom</ion-label>
+      <ion-item class="form" lines="none">
         <ion-input
                 formControlName="firstname"
-                color="light"
                 placeholder="Prénom"
                 type="text"
                 name="firstname"
@@ -41,18 +37,16 @@
       </ion-item>
 
       <div class="" *ngIf="submitted && f.firstname.errors">
-        <ion-label color="danger" *ngIf="f.firstname.errors.required">Veuillez indiquer votre prénom</ion-label>
+        <ion-label color="danger" *ngIf="f.firstname.errors.required" class="error-message">Veuillez indiquer votre prénom</ion-label>
       </div>
 
  <!--------------------------------------  PRENOM ------------------------------------>
 
  <!--------------------------------------  EMAIL ------------------------------------>
 
-      <ion-item>
-        <ion-label color="light">Email</ion-label>
+      <ion-item class="form" lines="none">
         <ion-input
                 formControlName="email"
-                color="light"
                 placeholder="Adresse email"
                 type="email"
                 name="email"
@@ -60,18 +54,16 @@
       </ion-item>
 
       <div class="" *ngIf="submitted && f.email.errors">
-        <ion-label color="danger" *ngIf="f.email.errors.required">Veuillez indiquez un email</ion-label>
-        <ion-label color="danger" *ngIf="f.email.errors?.pattern">Votre email n'est pas valide</ion-label>
+        <ion-label color="danger" *ngIf="f.email.errors.required" class="error-message">Veuillez indiquez un email</ion-label>
+        <ion-label color="danger" *ngIf="f.email.errors?.pattern" class="error-message">Votre email n'est pas valide</ion-label>
       </div>
 
 <!--------------------------------------  EMAIL ------------------------------------>
 
 <!--------------------------------------  MOT DE PASSE ------------------------------------>
-      <ion-item>
-        <ion-label color="light">Mot de passe</ion-label>
+      <ion-item class="form" lines="none">
         <ion-input
                 formControlName="password"
-                color="light"
                 placeholder="Mot de passe"
                 type="password"
                 name="password"
@@ -79,10 +71,10 @@
       </ion-item>
 
       <div class="" *ngIf="submitted && f.password.errors">
-        <ion-label color="danger" *ngIf="f.password.errors.required">
+        <ion-label color="danger" *ngIf="f.password.errors.required" class="error-message">
           Veuillez indiquez un mot de passe
         </ion-label>
-        <ion-label color="danger" *ngIf="f.password.errors.pattern">
+        <ion-label color="danger" *ngIf="f.password.errors.pattern" class="error-message">
           Le mot de passe doit contenir au minimum 8 caractères, une minuscule, un majuscule et un chiffre.
         </ion-label>
       </div>
@@ -90,31 +82,18 @@
 
 <!--------------------------------------  MOT DE PASSE ------------------------------------>
 
-      <ion-item lines="none">
-        <ion-button slot="end" color="light" fill="clear">Mot de passe oublié ?</ion-button>
-      </ion-item>
+      <ion-button shape="round" expand="block" type="submit" class="inscription-btn" color="red">
+        <p class="text-sign-in">
+          Inscription
+        </p>
+      </ion-button>
 
-      <ion-button type="submit" color="light" fill="outline" shape="round" expand="block" routerLink="/connexion">Connexion</ion-button>
-      <br>
-      <ion-button shape="round" expand="block" type="submit">Inscription</ion-button>
+      <div type="submit" fill="outline" shape="round" expand="block" [routerLink]="['/home/connexion']" class="btn-connexion">J'ai déjà un compte</div>
 
-      <ion-item lines="none">
-        <ion-label color="light" class="ion-text-center">Ou connectez-vous avec</ion-label>
-      </ion-item>
+      <hr class="hr">
 
-      <div class="flex">
-        <ion-button shape="round" color="#3b5998">
-          <ion-icon slot="start" name="logo-facebook"></ion-icon>
-          Facebook
-        </ion-button>
-        <ion-button  shape="round" color="#db4a39" >
-          <ion-icon slot="start" name="logo-google"></ion-icon>
-          Google
-        </ion-button>
-      </div>
     </ion-list>
     </form>
-
   </div>
 
 </ion-content>
