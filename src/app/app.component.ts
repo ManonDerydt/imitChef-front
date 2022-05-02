@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +9,11 @@ import {HttpClient} from '@angular/common/http';
 export class AppComponent {
   constructor(
     public router:Router,
-    private http: HttpClient,
   ) {
     this.initializeApp();
   }
 
-  initializeApp(){
+   initializeApp(){
     this.router.navigateByUrl('splash');
   }
 }
