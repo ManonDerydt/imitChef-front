@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Validators, FormGroup, FormBuilder, FormControl} from '@angular/forms';
+import {Validators, FormGroup, FormBuilder} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
-import {HttpClient} from "@angular/common/http";
-import {Router} from '@angular/router';
+import {UserService} from "../../../services/user.service";
+import {StorageService} from "../../../services/storage.service";
+
 
 @Component({
   selector: 'app-connexion',
@@ -13,7 +14,7 @@ export class ConnexionPage implements OnInit {
 
   submitted = false;
   user: any;
-  formContact : FormGroup;
+  loginForm : FormGroup;
   version: string;
   auth: any[];
   dataUser = {
@@ -25,45 +26,37 @@ export class ConnexionPage implements OnInit {
   constructor(
       private route: ActivatedRoute,
       private formBuilder: FormBuilder,
-      private http: HttpClient,
-      private router: Router,
-
+      private userService: UserService,
+      private storageService: StorageService
   ) {
-    // this.afAuth.authState.subscribe(auth => {
-    //   if (!auth) {
-    //     console.log("Non connecté !")
-    //     this.connected = false;
-    //   }else {
-    //     console.log("Connecté !")
-    //     this.connected = true;
-    //   }
-    // })
   }
 
   ngOnInit() {
-    this.formContact = this.formBuilder.group({
-      lastname: ['', [Validators.required]],
-      firstname: ['', [Validators.required]],
+    this.loginForm = this.formBuilder.group({
       password: ['', [Validators.required]],
       email: ['', [Validators.required]]
     });
   }
   get f() {
-    return this.formContact.controls;
+    return this.loginForm.controls;
   }
 
-  register(){
+  login(){
 
     this.submitted = true;
 
-    if(this.formContact.invalid){
-      alert("Le formulaire n'est pas correct");
-      return;
-    }else{
-      console.log(this.formContact.value)
-      let user = this.formContact.value;
-
-      // return this.userService.createUser(user).subscribe();
+    if(this.loginForm.valid){
+      const {email, password} = this.loginForm.value;
+      return this.userService.loginUser(password, email).subscribe(
+          async (res: any) => {
+            const {user, token} = res;
+            await this.storageService.set("token", token);
+            await this.storageService.set("user", user);
+          },
+          error => {
+            console.log(error)
+          }
+      );
     }
 
   }

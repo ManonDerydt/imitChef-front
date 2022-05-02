@@ -7,7 +7,7 @@
     </div>
 
     <div *ngIf="!connected">
-      <form [formGroup]="formContact" novalidate (ngSubmit)="register()">
+      <form [formGroup]="loginForm" novalidate (ngSubmit)="login()">
         <ion-list>
           <!--------------------------------------  EMAIL ------------------------------------>
           <ion-item class="form" lines="none">
@@ -50,7 +50,7 @@
 
           <!--------------------------------------  MOT DE PASSE ------------------------------------>
 
-          <ion-button shape="round" expand="block" type="submit" class="connexion-btn " color="red" (click)="login()">
+          <ion-button shape="round" expand="block" type="submit" class="connexion-btn " color="red">
             <p class="text-connexion">
               Connexion
             </p>

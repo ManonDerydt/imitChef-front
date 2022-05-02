@@ -13,4 +13,8 @@ export class UserService {
     createUser(user) {
         return this.api.post('/users', user);
     }
+
+    loginUser(password: string, email: string) {
+        return this.api.post("/users/login", {password, email});
+    }
 }
