@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Validators, FormGroup, FormBuilder} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from "../../../services/user.service";
 import {StorageService} from "../../../services/storage.service";
 
@@ -27,7 +27,8 @@ export class ConnexionPage implements OnInit {
       private route: ActivatedRoute,
       private formBuilder: FormBuilder,
       private userService: UserService,
-      private storageService: StorageService
+      private storageService: StorageService,
+      private router: Router
   ) {
   }
 
@@ -52,6 +53,7 @@ export class ConnexionPage implements OnInit {
             const {user, token} = res;
             await this.storageService.set("token", token);
             await this.storageService.set("user", user);
+            this.router.navigate(['/home/account']);
           },
           error => {
             console.log(error)
