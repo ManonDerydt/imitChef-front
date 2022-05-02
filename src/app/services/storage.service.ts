@@ -15,7 +15,6 @@ export class StorageService {
     async init() {
         const storage = await this.storage.create();
         this._storage = storage;
-        console.log("storage", this._storage)
     }
 
     public async set(key: string, value: any) {
