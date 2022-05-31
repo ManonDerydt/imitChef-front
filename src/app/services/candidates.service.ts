@@ -15,5 +15,4 @@ export class CandidatesService {
     getCandidateById(id: string): Observable<any> {
         return this.api.get(`/candidates/${id}`);
     }
-    I
 }

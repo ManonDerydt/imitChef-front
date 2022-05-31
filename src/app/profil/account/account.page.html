@@ -4,14 +4,13 @@
       <img src="assets/ic-log.png" class="img-account">
   </ion-item>
 
-  <div class="ion-text-center text-account">
-    <h2>Salut User !</h2>
+  <div *ngFor="let user of users;" class="ion-text-center text-account">
+    <h2>Salut {{user.firstname}} !</h2>
     <p>Retrouvez ici, toutes vos recettes !</p>
   </div>
 
   <ion-card class="item-profile">
-    {{ user.reciepes }}
-  </ion-card>
 
+  </ion-card>
 
 </ion-content>
