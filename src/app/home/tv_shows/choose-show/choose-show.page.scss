@@ -40,20 +40,20 @@ ion-content{
 
 .name-show{
   padding-top: 5%;
-  font-weight: bold;
   font-size: 25px;
+  color: white;
   font-family: 'EB Garamond', serif;
 }
 
 .title-show{
-  margin-top: -18%;
-  margin-left: 22%;
-  margin-bottom: 10%;
-  z-index: 3;
-  width: 55%;
-  border-radius: 30px;
-  height: 60px;
-  background-color: #FF6859;
-  filter: opacity(99%);
-  color: white;
+margin-top: -18%;
+margin-left: 22%;
+margin-bottom: 10%;
+z-index: 3;
+width: 55%;
+border-radius: 30px;
+height: 60px;
+background-color: #FF6859;
+filter: opacity(99%);
+color: white;
 }
