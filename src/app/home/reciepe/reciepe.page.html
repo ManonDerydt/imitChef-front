@@ -21,9 +21,10 @@
         <hr class="hr">
 
         <div class="block-reciepe">
-            <p>Difficulté : {{ reciepe.difficulty}}</p>
+            <p>Difficulté : {{ reciepe.difficulty }}</p>
             <p *ngFor="let material of reciepe.Materials">Matériel nécessaire : {{material.Grill}}</p>
-            <p *ngFor="let ingredient of reciepe.Ingredients">Ingrédients :
+            <p *ngFor="let ingredient of reciepe.Ingredients">
+                Ingrédients :
                 {{ingredient.poultry}},
                 {{ingredient.peper}}
             </p>
