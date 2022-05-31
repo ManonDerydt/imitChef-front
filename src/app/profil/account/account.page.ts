@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import { User } from '../../models/user';
 import {Reciepe} from "../../models/reciepe";
-import {Candidate} from "../../models/candidate";
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-account',
@@ -12,31 +11,22 @@ import {Candidate} from "../../models/candidate";
 })
 export class AccountPage implements OnInit {
     reciepes: Array<Reciepe> = [];
-    users: Array<User> = [];
+    user: User | object = {};
 
   constructor(
-      private route: ActivatedRoute,
-      private userService: UserService
-  ) {
-      this.route.params.subscribe(async parameter => {
+      private userService: UserService,
+      private storageService: StorageService
+  ) { }
 
-      })
+  async ngOnInit() {
+    this.user = await this.storageService.get("user");
+    this.getReciepes();
   }
 
-  ngOnInit() {
-      this.getReciepes();
-      this.getUser();
+  getReciepes() {
+    this.userService.getReciepesByUser()
+    .subscribe((reciepes: Array<Reciepe>) => {
+        this.reciepes = reciepes;
+    });
   }
-
-    getReciepes() {
-      this.userService.getReciepesByUser().subscribe(reciepes => {
-          console.log(reciepes)
-      })
-    }
-
-    getUser(){
-      this.userService.getUser().subscribe( (users: Array<User> = [])  => {
-          this.users = users;
-      })
-    }
 }
