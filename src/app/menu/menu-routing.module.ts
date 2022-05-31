@@ -6,6 +6,7 @@ import { WelcomePage } from "../welcome_page/welcome.page";
 import { Sign_inPage } from "../profil/register/sign_in/sign_in.page";
 import { AgoraPage } from "../community/agora/agora.page";
 import {ConnexionPageModule} from "../profil/register/connexion/connexion.module";
+import { AuthGuardService } from '../services/authGuard';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
       },
       {
         path: 'account',
-        loadChildren: () => import('../profil/account/account.module').then(m => m.AccountPageModule)
+        loadChildren: () => import('../profil/account/account.module').then(m => m.AccountPageModule),
+        canActivate: [AuthGuardService]
       },
       {
         path: 'shows',
@@ -50,5 +52,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
+  providers: [AuthGuardService]
 })
 export class MenuPageRoutingModule { }
