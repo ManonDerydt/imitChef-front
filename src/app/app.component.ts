@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {StorageService} from "./services/storage.service";
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import {Router} from "@angular/router";
 export class AppComponent {
   constructor(
     public router:Router,
+    private storageService: StorageService
   ) {
     this.initializeApp();
   }
