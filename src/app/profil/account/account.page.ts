@@ -3,6 +3,7 @@ import {UserService} from "../../services/user.service";
 import { User } from '../../models/user';
 import {Reciepe} from "../../models/reciepe";
 import { StorageService } from '../../services/storage.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-account',
@@ -15,8 +16,8 @@ export class AccountPage implements OnInit {
 
   constructor(
       private userService: UserService,
-      private storageService: StorageService
-  ) { }
+      private storageService: StorageService,
+      private router: Router  ) { }
 
   async ngOnInit() {
     this.user = await this.storageService.get("user");
@@ -28,5 +29,9 @@ export class AccountPage implements OnInit {
     .subscribe((reciepes: Array<Reciepe>) => {
         this.reciepes = reciepes;
     });
+  }
+
+  openReciepeById($reciepe: any = {}) {
+    this.router.navigate(['home/reciepe/', $reciepe.id]);
   }
 }

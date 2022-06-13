@@ -9,11 +9,19 @@
     <p>Retrouvez ici, toutes vos recettes !</p>
   </div>
 
-  <ion-card
-    *ngFor="let reciepe of reciepes;"
-    class="item-profile"
-   >
-    {{ reciepe.titre }}
-  </ion-card>
+  <div *ngFor="let reciepe of reciepes;" class="item-profile" (click)="openReciepeById(reciepe)">
+      <div>
+          <img class="post_img" src="{{ reciepe.image }}">
+
+          <div class="flex-button">
+              <div></div>
+              <ion-icon name="heart" class="heart-icon"></ion-icon>
+          </div>
+          <p class="insta-text"><b>{{ reciepe.title }} : </b>
+              {{ reciepe.description }}
+          </p>
+      </div>
+
+  </div>
 
 </ion-content>

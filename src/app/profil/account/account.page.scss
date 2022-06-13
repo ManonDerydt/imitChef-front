@@ -5,10 +5,7 @@
 }
 
 .item-profile{
-  width: 80%;
-  margin-left: 10%;
   margin-top: 5%;
-  padding: 15px;
 }
 
 .img-account{
@@ -19,3 +16,39 @@
 .text-account{
   font-family: 'EB Garamond', serif;
 }
+
+.header-avatar{
+  display: flex;
+}
+
+.name-avatar{
+  margin-left: 5%;
+  margin-top: 8%;
+  font-family: 'EB Garamond', serif;
+  font-size: 25px;
+}
+
+.post_img{
+  height: 265px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.insta-text{
+  font-size: 18px;
+  font-family: 'EB Garamond', serif;
+  margin-left: 5%;
+  margin-right: 2%;
+}
+
+.heart-icon{
+  margin-right: 8% !important;
+  border: 2px solid #444;
+  padding: 6px;
+  border-radius: 19px;
+  background-color: white;
+  color: #FF8D8D !important;
+  margin-left: 85%;
+}
+
+
