@@ -7,7 +7,7 @@ export class Reciepe {
     id: number;
     image: string;
     description: string;
-    titre: string;
+    title: string;
     time_cooking: number;
     difficulty: string;
     Ingredients: Array<Ingredient>

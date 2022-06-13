@@ -15,7 +15,7 @@
 
   <div class="stories">
 
-    <div *ngFor="let candidate of candidates">
+    <div *ngFor="let candidate of candidates" class="block-candidates">
       <div>
         <div class="story">
           <div class="img-box" (click)="goToCandidate(candidate)">
@@ -47,7 +47,7 @@
           <div></div>
           <ion-icon name="heart" class="heart-icon"></ion-icon>
         </div>
-        <p class="insta-text"><b>{{ reciepe.titre }} : </b>
+        <p class="insta-text"><b>{{ reciepe.title }} : </b>
           {{ reciepe.description }}
         </p>
       </div>
