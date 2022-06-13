@@ -12,7 +12,7 @@ ion-content{
 }
 
 .img-title{
-  width: 25%;
+  width: 40%;
 }
 
 .content-home{
@@ -40,12 +40,13 @@ ion-content{
 .img-welcome{
   border-radius: 100%;
   border: 15px solid #FF6859;
-  width: 72%;
+  width: 70%;
   margin-left: 15%;
   margin-bottom: 10%;
-  height: 340px;
+  height: 310px;
   -o-object-fit: cover;
   object-fit: cover;
+  margin-top: 3%;
 }
 
 .event-button, .activity-button{
@@ -62,7 +63,7 @@ ion-content{
 }
 
 .font-home-page-title{
-  font-size: 35px;
+  font-size: 45px;
   font-family: 'Abril Fatface', cursive;
   color: #444;
   margin-bottom: 7%;
@@ -81,7 +82,7 @@ ion-content{
 }
 
 .button-home{
-  margin-top: 25%;
+  margin-top: 15%;
   width: 80%;
   padding: 5px;
   color: white;
