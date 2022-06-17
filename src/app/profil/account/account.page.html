@@ -7,6 +7,7 @@
   <div class="ion-text-center text-account">
     <h2>Salut {{user.firstname}} !</h2>
     <p>Retrouvez ici, toutes vos recettes !</p>
+    <ion-button>Vous déconnecter</ion-button>
   </div>
 
   <div *ngFor="let reciepe of reciepes;" class="item-profile" (click)="openReciepeById(reciepe)">
@@ -21,7 +22,6 @@
               {{ reciepe.description }}
           </p>
       </div>
-
   </div>
 
 </ion-content>
