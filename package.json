@@ -35,12 +35,14 @@
     "mysql2": "^2.2.5",
     "pg": "^8.7.0",
     "pg-hstore": "^2.3.4",
+    "query-string": "^7.1.1",
     "rxjs": "~6.6.0",
     "sass": "^1.38.0",
     "sequelize": "^6.6.5",
     "sqlite3": "^5.0.2",
     "tedious": "^11.4.0",
     "tslib": "^2.0.0",
+    "use-query-params": "^1.2.3",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
