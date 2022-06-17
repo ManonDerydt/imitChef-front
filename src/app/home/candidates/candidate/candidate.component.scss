@@ -1,12 +1,14 @@
 .image-ronde-bg{
-  width: 275px;
-  height: 275px;
+  width: 230px;
+  height: 230px;
   border: 6px solid #FF8D8D;
   border-radius: 143px;
-  margin-top: -30%;
-  margin-left: 22%;
+  margin-top: -35%;
+  margin-left: 25%;
   -o-object-fit: cover;
   object-fit: cover;
+  text-align: center;
+  margin-bottom: 4%;
 }
 
 .title{
@@ -15,7 +17,7 @@
 }
 
 .img-welcome{
-  height: 190px;
+  height: 220px;
   object-fit: cover;
 }
 
