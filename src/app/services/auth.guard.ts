@@ -8,10 +8,10 @@ export class AuthGuard implements CanActivate {
   async canActivate(): Promise<boolean> {
     const user = await this.storageService.get("user");
     if (user) {
+      return true;
+    } else {
       this.router.navigate(["home/sign_in"])
       return false;
-    } else {
-      return true;
     }
   }
 }

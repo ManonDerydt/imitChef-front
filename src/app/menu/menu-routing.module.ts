@@ -28,16 +28,15 @@ const routes: Routes = [
       {
         path: 'connexion',
         loadChildren: () => import('../profil/register/connexion/connexion.module').then(m => m.ConnexionPageModule),
-
       },
       {
         path: 'account',
         loadChildren: () => import('../profil/account/account.module').then(m => m.AccountPageModule),
-        canActivate: [AuthGuardService]
+        canActivate: [AuthGuardService],
       },
       {
         path: 'shows',
-        loadChildren: () => import('../home/tv_shows/tv_shows.module').then(m => m.Tv_showsModule)
+        loadChildren: () => import('../home/tv_shows/tv_shows.module').then(m => m.Tv_showsModule),
       },
       {
         path: 'candidates',
