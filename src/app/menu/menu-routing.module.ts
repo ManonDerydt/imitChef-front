@@ -7,6 +7,8 @@ import { Sign_inPage } from "../profil/register/sign_in/sign_in.page";
 import { AgoraPage } from "../community/agora/agora.page";
 import {ConnexionPageModule} from "../profil/register/connexion/connexion.module";
 import { AuthGuardService } from '../services/authGuard';
+import {AuthGuard} from "../services/auth.guard"
+import {AccountPageModule} from "../profil/account/account.module";
 
 const routes: Routes = [
   {
@@ -19,11 +21,14 @@ const routes: Routes = [
       },
       {
         path: 'sign_in',
-        loadChildren: () => import('../profil/register/sign_in/sign_in.module').then(m => m.SignInModule)
+        loadChildren: () => import('../profil/register/sign_in/sign_in.module').then(m => m.SignInModule),
+        canActivate: [AuthGuard],
+        redirectTo: 'account',
       },
       {
         path: 'connexion',
-        loadChildren: () => import('../profil/register/connexion/connexion.module').then(m => m.ConnexionPageModule)
+        loadChildren: () => import('../profil/register/connexion/connexion.module').then(m => m.ConnexionPageModule),
+
       },
       {
         path: 'account',
