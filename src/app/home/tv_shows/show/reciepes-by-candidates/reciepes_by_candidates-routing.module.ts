@@ -13,10 +13,6 @@ const routes: Routes = [
     path: ':id',
     component: Reciepes_by_candidatesPage
   },
-  // {
-  //   path: 'candidate/:candidateId',
-  //   component: Reciepes_by_candidatesPage
-  // }
 ];
 
 @NgModule({
