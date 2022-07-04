@@ -4,17 +4,25 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RestaurantPageRoutingModule } from './restaurant-routing.module';
-
+import { RestaurantPageRoutingModule } from './restaurant.routing.module';
+import { ReciepePage } from "../home/reciepe/reciepe.page";
 import { RestaurantPage } from './restaurant.page';
+import { ReciepePageRoutingModule} from "../home/reciepe/reciepe.routing.module";
+import { NgCalendarModule  } from 'ionic2-calendar';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RestaurantPageRoutingModule
+    RestaurantPageRoutingModule,
+    NgCalendarModule,
+    ReciepePageRoutingModule
   ],
-  declarations: [RestaurantPage]
+  declarations: [
+      ReciepePage,
+    RestaurantPage
+
+  ]
 })
 export class RestaurantPageModule {}

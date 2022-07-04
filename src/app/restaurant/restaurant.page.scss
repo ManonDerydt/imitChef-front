@@ -1,0 +1,139 @@
+.post_img{
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.button-back{
+  color: #FF6859;
+}
+
+.title{
+  font-size: 27px;
+  margin-left: 5%;
+}
+
+.text-description{
+  margin-left: 5%;
+  font-size: 20px;
+  color: #444;
+  margin-right: 5%;
+}
+
+.informations{
+  margin-top: 12%;
+}
+
+.title-chef{
+  justify-content: space-around;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 5%;
+  align-items: end;
+}
+
+.chef{
+  border: 1px solid #39A7E5;
+  padding: 2%;
+  background-color: #39A7E5;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  width: 45%;
+  text-align: center;
+  height: 40px;
+}
+
+.contact{
+  border: 1px solid #F08C80;
+  padding: 2%;
+  background-color: #F08C80;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  width: 45%;
+  text-align: center;
+  height: 40px;
+}
+
+.category{
+  border: 1px solid #A4E08C;
+  padding: 2%;
+  background-color: #A4E08C;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  width: 45%;
+  text-align: center;
+  height: 40px;
+}
+
+.city{
+  border: 1px solid #566573;
+  padding: 2%;
+  background-color: #566573;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  width: 45%;
+  text-align: center;
+  height: 40px;
+}
+
+.chef-text{
+  font-size: 20px;
+  color: #444;
+  width: 35%;
+  text-align: end;
+}
+
+.hr{
+  width: 90%;
+  width: 90%;
+  height: 1px;
+  background-color: #444;
+  border-radius: 40px;
+}
+
+.people{
+  display: inline-grid;
+  margin-top: 5%;
+}
+
+.content-couverts{
+  margin-left: 5%;
+}
+
+.select-couvert{
+  margin-top: 5%;
+  padding: 5%;
+  border-radius: 7px;
+  border: 5px solid #F08C80;
+  background-color: white;
+}
+
+.title-order{
+  margin-left: 5%;
+  font-size: 20px;
+  color: #444;
+  margin-right: 5%;
+  margin-bottom: 10%;
+}
+
+.inscription-btn {
+  width: 60%;
+  height: 65px;
+  background-color: #FF6859;
+  boder-radius: 68px;
+  border-radius: 53px;
+  color: white;
+  text-decoration: none;
+  margin-left: 15%;
+  margin-bottom: 10%;
+}
+
+.text-sign-in{
+  text-transform: capitalize;
+  font-size: 25px;
+  font-family: 'EB Garamond', serif;
+}

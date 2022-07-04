@@ -1,9 +1,78 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Liste des restaurants ! </ion-title>
+    <ion-back-button class="button-back" slot="start"></ion-back-button>
+    <ion-title>{{ restaurant.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div>
+    <img class="post_img" src="{{restaurant.image}}" alt="{{restaurant.name}}">
+    <h2 class="title">{{restaurant.name}}
+      <ion-icon name="restaurant-outline"></ion-icon>
+    </h2>
+    <p class="text-description">
+      {{restaurant.description}}
+    </p>
+
+    <hr class="hr">
+
+    <div class="informations">
+
+      <div class="title-chef">
+        <span class="chef">Chef du restaurant</span>
+        <h2 class="chef-text">{{restaurant.chef}}</h2>
+      </div>
+
+      <div class="title-chef">
+        <span class="contact">Contact</span>
+        <h2 class="chef-text">{{restaurant.number}}</h2>
+      </div>
+
+      <div class="title-chef">
+        <span class="category">Catégorie</span>
+        <h2 class="chef-text">{{restaurant.category}}</h2>
+      </div>
+
+      <div class="title-chef" style="margin-bottom: 15%;">
+        <span class="city">Ville</span>
+        <h2 class="chef-text">{{restaurant.city}}({{restaurant.country}})</h2>
+      </div>
+
+    </div>
+
+    <hr class="hr">
+
+    <div class="content-couverts">
+
+      <h2 class="title-order">
+        Si vous êtes intéressé, clickez sur le bouton ci-dessous et nous vous proposerons des dates dans les plus brefs délais
+        <ion-icon name="calendar-number-outline"></ion-icon>
+      </h2>
+
+<!--      <div class="people">-->
+<!--        <label for="couverts">Sélectionnez le nombre de couverts :</label>-->
+
+<!--        <select name="couverts" id="couverts" class="select-couvert">-->
+<!--          <ion-icon name="chevron-down-outline"></ion-icon>s-->
+<!--          <option value="">Combien de couverts ?</option>-->
+<!--          <option value="1">1 couvert</option>-->
+<!--          <option value="2">2 couverts</option>-->
+<!--          <option value="3">3 couverts</option>-->
+<!--          <option value="4">4 couverts</option>-->
+<!--          <option value="5">5 couverts</option>-->
+<!--          <option value="6">6 couverts</option>-->
+<!--        </select>-->
+<!--      </div>-->
+
+      <ion-button shape="round" expand="block" type="submit" class="inscription-btn" color="red">
+        <p class="text-sign-in">
+          Clickez juste ici !
+        </p>
+      </ion-button>
+
+    </div>
+
+  </div>
 
 </ion-content>

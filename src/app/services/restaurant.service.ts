@@ -7,13 +7,9 @@ import {ApiService} from './api.service';
 })
 
 export class RestaurantService {
-
     constructor(private api: ApiService) {}
 
-
-    orderRestaurant() {
-        return this.api.get(`/restaurant`);
+    getRestaurant(id: string){
+        return this.api.get(`/restaurant/${id}`);
     }
-
-
 }
