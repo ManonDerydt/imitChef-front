@@ -19,16 +19,8 @@ export class UserService {
         return this.api.post("/users/login", {password, email});
     }
 
-    // getUser(){
-    //     return this.api.get(`/users/account`);
-    // }
-
     getReciepesByUser() {
         return this.api.get(`/users/reciepes`);
-    }
-
-    getUser(){
-        return this.api.get(`/users`);
     }
 
 }
