@@ -1,16 +1,16 @@
 <ion-content>
-    <h2 class="title-choose-show">Choisi ton émission</h2>
+    <h2 class="title-choose-show">Choisi ton offre</h2>
     <hr class="hr">
-    <div *ngFor="let show of shows" (click)="openShowById(show)">
 
+    <div *ngFor="let deal of deals" (click)="openDealById(deal)">
         <div class="button-tv-show">
-            <img class="img-show" src="{{ show.image }}" alt="{{ show.name }}">
+            <img class="img-show" src="{{ deal.image }}" alt="{{ deal.restaurant }}">
         </div>
         <div class="ion-text-center title-show">
-            <p class="name-show">{{ show.name }}</p>
+            <p class="name-show">{{ deal.restaurant }}</p>
+            <p><i>{{deal.city}}</i></p>
         </div>
 
     </div>
+
 </ion-content>
-
-
