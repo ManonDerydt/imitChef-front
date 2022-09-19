@@ -5,6 +5,8 @@ import {Deal} from "./deal";
 export class Order {
     id: number;
     time: string;
+    date: string;
+    hour: string;
     discount: string;
     cutlery: string;
     number: string;
